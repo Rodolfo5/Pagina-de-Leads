@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout | UpSaude</title>
+  <meta name="description" content="Checkout para garantir a vaga no pre-lancamento do consultorio digital." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <main class="page">
+    <div class="topbar">
+      <div class="brand">up<span>+</span>saude</div>
+      <span class="badge">Etapa 3 de 4</span>
+    </div>
+
+    <section class="content-panel">
+      <p class="kicker">CHECKOUT SEGURO</p>
+      <h1 class="section-title">Garanta sua vaga de pre-lancamento</h1>
+      <p class="section-sub">
+        Oferta exclusiva para <strong data-lead="nome">profissional</strong>.
+        Finalize com cartao para ativar o acesso e seguir para criacao de login.
+      </p>
+
+      <span class="timer">
+        Oferta encerra em <span class="clock" id="timer">12:00</span>
+      </span>
+
+      <div class="checkout-grid">
+        <form class="checkout-box form-grid" id="checkoutForm" novalidate>
+          <h3>Dados de pagamento</h3>
+
+          <div>
+            <label for="cardName">Nome no cartao</label>
+            <input id="cardName" name="cardName" type="text" placeholder="Nome impresso no cartao" required />
+          </div>
+
+          <div>
+            <label for="cardNumber">Numero do cartao</label>
+            <input id="cardNumber" name="cardNumber" type="text" inputmode="numeric" placeholder="0000 0000 0000 0000" required />
+          </div>
+
+          <div class="row-3">
+            <div>
+              <label for="cardExp">Validade</label>
+              <input id="cardExp" name="cardExp" type="text" inputmode="numeric" placeholder="MM/AA" required />
+            </div>
+            <div>
+              <label for="cardCvv">CVV</label>
+              <input id="cardCvv" name="cardCvv" type="text" inputmode="numeric" placeholder="123" required />
+            </div>
+            <div>
+              <label for="installments">Parcelas</label>
+              <select id="installments" name="installments">
+                <option>1x de R$ 97,00</option>
+                <option>2x de R$ 50,81</option>
+                <option>3x de R$ 34,52</option>
+              </select>
+            </div>
+          </div>
+
+          <p class="error-text" id="checkoutMsg"></p>
+          <button class="btn btn-primary btn-lg" type="submit">Finalizar inscricao e criar login</button>
+          <p class="notice">Ambiente seguro. Seus dados de pagamento sao protegidos com criptografia.</p>
+        </form>
+
+        <aside class="summary-box">
+          <h3>Resumo da compra</h3>
+          <p class="pill">Pre-lancamento exclusivo</p>
+          <div style="height: 12px;"></div>
+          <div class="summary-line"><span>Plano Profissional</span><strong>R$ 197,00</strong></div>
+          <div class="summary-line"><span>Desconto embaixador</span><strong>-R$ 100,00</strong></div>
+          <div class="summary-line"><span>Taxa de ativacao</span><strong>R$ 0,00</strong></div>
+          <div class="summary-total summary-line"><span>Total hoje</span><strong>R$ 97,00</strong></div>
+          <div style="height: 10px;"></div>
+          <p class="notice">Inclui 90 dias de uso gratuito da plataforma + 50% OFF vitalicio apos o periodo de validacao.</p>
+          <div style="height: 16px;"></div>
+          <a class="btn btn-outline" href="./consultorio-digital.html">Voltar</a>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <script src="./app.js" defer></script>
+</body>
+</html>
