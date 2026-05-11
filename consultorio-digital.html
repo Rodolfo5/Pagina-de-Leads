@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Consultório Digital | UpSaude</title>
-  <meta name="description" content="Conheça o consultório digital com IA integrada para profissionais da saúde." />
+  <title>Confirmação | UpSaude</title>
+  <meta name="description" content="Confirme sua vaga no pré-lançamento e siga para o pagamento." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -17,51 +17,93 @@
         <img class="brand-logo" src="./public/logo-consultorio-digital.png" alt="Consultório Digital" onerror="this.style.display='none'" />
         <span class="brand-text"><span class="brand-up">UP</span><span class="brand-saude">SAÚDE</span></span>
       </div>
-      <span class="badge">Etapa 2 de 4</span>
+      <span class="badge">Etapa 7 de 8</span>
     </div>
 
     <section class="content-panel">
-      <p class="kicker">CONSULTÓRIO DIGITAL</p>
-      <h1 class="section-title">Seu Consultório Digital para escalar atendimentos de forma profissional</h1>
+      <p class="kicker">CONFIRME SUA VAGA</p>
+      <h1 class="section-title">
+        Tudo certo, <strong data-lead="nome">profissional</strong>. Confira o resumo antes de pagar.
+      </h1>
       <p class="section-sub">
-        <strong data-lead="nome">Profissional</strong>, esta é a visão do pré-lançamento para profissionais da saúde
-        que querem agenda, prontuário com IA e teleconsulta em um único ecossistema.
+        Próximo passo é o pagamento seguro. Em seguida, seu acesso ao consultório digital é liberado imediatamente.
       </p>
 
-      <div class="features">
-        <article class="feature">
-          <h3>Tudo do paciente em um só lugar</h3>
-          <p>Histórico completo centralizado: dados, anotações, evoluções e documentos com mais segurança de decisão.</p>
-        </article>
-        <article class="feature">
-          <h3>Prontuário com ajuda de IA</h3>
-          <p>A IA gera o prontuário a partir da consulta para você revisar e finalizar com menos tempo digitando.</p>
-        </article>
-        <article class="feature">
-          <h3>Atendimento online com cara de consulta</h3>
-          <p>Telemedicina profissional para posicionar melhor seu serviço e cobrar com clareza, sem improviso em apps de mensagem.</p>
-        </article>
-        <article class="feature">
-          <h3>Todos os pacientes em uma base só</h3>
-          <p>Unifica acompanhamento e facilita ações de retorno e reativação com mais fidelização e previsibilidade.</p>
-        </article>
+      <div class="confirm-summary">
+        <h3 class="confirm-h">Resumo da sua vaga</h3>
+        <ul class="offer-includes confirm-list">
+          <li><span>✓</span> Acesso completo ao consultório digital</li>
+          <li><span>✓</span> Prontuário com IA ilimitado</li>
+          <li><span>✓</span> Telemedicina profissional segura</li>
+          <li><span>✓</span> Base única de pacientes + reativação</li>
+          <li><span>✓</span> Suporte humano por WhatsApp</li>
+        </ul>
+
+        <div class="confirm-row">
+          <div class="bonus-stack tight">
+            <div class="bonus-tag">🎁 BÔNUS</div>
+            <strong>E-book: Dobre seu número de pacientes</strong>
+            <span>Liberado após confirmação.</span>
+          </div>
+
+          <div class="guarantee tight">
+            <div class="guarantee-seal">7<span>dias</span></div>
+            <div>
+              <strong>Garantia de 7 dias</strong>
+              <span>Devolução de 100% se não gostar.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="confirm-total">
+          <div>
+            <span class="ct-from">De <s>R$ 97,00</s>/mês · 25% OFF</span>
+            <strong class="ct-value">R$ 72,75<span>/mês</span></strong>
+            <span class="ct-note">ou 3x de R$ 24,25 no cartão</span>
+          </div>
+          <a class="btn btn-primary btn-lg btn-pulse" href="./checkout.html">
+            Ir para o pagamento
+            <span class="btn-arrow">→</span>
+          </a>
+        </div>
       </div>
 
-      <section class="steps">
-        <h3>Como funciona na prática</h3>
-        <div class="step"><span class="n">1</span><p>Você se cadastra com dados profissionais e especialidade.</p></div>
-        <div class="step"><span class="n">2</span><p>Nossa equipe libera seu acesso antecipado ao consultório digital.</p></div>
-        <div class="step"><span class="n">3</span><p>Você usa a plataforma no dia a dia, realiza consultas e envia feedback.</p></div>
-        <div class="step"><span class="n">4</span><p>Cumprindo os requisitos do pré-lançamento, os benefícios vitalícios são ativados.</p></div>
-      </section>
-
-      <div class="row-2">
-        <a class="btn btn-outline" href="./onboarding.html">Voltar</a>
-        <a class="btn btn-primary" href="./checkout.html">Quero garantir minha vaga agora</a>
+      <div class="secure-row tight confirm-secure">
+        <span>🔒 Pagamento criptografado</span>
+        <span>🛡️ LGPD</span>
+        <span>⚡ Acesso imediato após pagar</span>
       </div>
+
+      <a class="btn btn-outline confirm-back" href="./onboarding.html">← Voltar</a>
     </section>
   </main>
 
   <script src="./app.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      try {
+        var lead = typeof getLead === 'function' ? getLead() : null;
+        var nome = lead && lead.nome ? lead.nome.split(' ')[0] : null;
+        if (nome) {
+          document.querySelectorAll('[data-lead="nome"]').forEach(function (el) {
+            el.textContent = nome;
+          });
+        }
+      } catch (e) {}
+      var badge = document.querySelector('.badge');
+      if (badge) setTimeout(function () { badge.classList.add('prog'); }, 400);
+    });
+  </script>
+  <style>
+    .badge { position: relative; overflow: hidden; }
+    .badge::after {
+      content: ''; position: absolute; bottom: 0; left: 0;
+      height: 3px; width: 0;
+      background: linear-gradient(90deg, #8f2bd3, #bf49f4);
+      border-radius: 99px;
+      transition: width 1s cubic-bezier(.22,1,.36,1);
+    }
+    .badge.prog::after { width: 87.5%; }
+  </style>
 </body>
 </html>

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Onboarding | UpSaude</title>
-  <meta name="description" content="Onboarding para profissionais da saúde: Nome, E-mail, CPF e CRM." />
+  <title>Cadastro | UpSaude</title>
+  <meta name="description" content="Cadastro rápido para profissionais da saúde: comece em menos de 2 minutos." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -17,15 +17,28 @@
         <img class="brand-logo" src="./public/logo-consultorio-digital.png" alt="Consultório Digital" onerror="this.style.display='none'" />
         <span class="brand-text"><span class="brand-up">UP</span><span class="brand-saude">SAÚDE</span></span>
       </div>
-      <span class="badge">Etapa 1 de 4</span>
+      <span class="badge step-1">Etapa 6 de 8</span>
     </div>
 
-    <section class="layout single">
+    <section class="layout">
+      <aside class="panel soft">
+        <span class="chip chip-glow"><span class="chip-dot"></span> Pré-lançamento aberto</span>
+        <h1>Falta pouco para escalar seus atendimentos.</h1>
+        <p>Em menos de 2 minutos você libera o acesso e segue para o próximo passo.</p>
+
+        <ul class="onb-includes">
+          <li><span>✓</span> Acesso ao consultório digital com IA</li>
+          <li><span>✓</span> 25% de desconto de pré-lançamento</li>
+          <li><span>✓</span> Bônus: e-book "Dobre seu número de pacientes"</li>
+          <li><span>✓</span> 7 dias de garantia incondicional</li>
+        </ul>
+
+      </aside>
 
       <article class="panel form-wrap">
         <header class="form-header">
-          <h2>Dados profissionais</h2>
-          <p>Preencha Nome, E-mail, CPF e CRM/registro para continuar.</p>
+          <h2>Crie seu cadastro profissional</h2>
+          <p>Validamos seu registro para liberar o acesso. Leva menos de 2 minutos.</p>
         </header>
 
         <form id="onboardingForm" class="form-grid" novalidate>
@@ -45,22 +58,47 @@
               <input id="cpf" name="cpf" type="text" placeholder="000.000.000-00" inputmode="numeric" required />
             </div>
             <div>
-              <label for="crm">CRM / Registro profissional</label>
-              <input id="crm" name="crm" type="text" placeholder="CRM-00000" required />
+              <label for="crm">Registro profissional</label>
+              <input id="crm" name="crm" type="text" placeholder="CRM / CRP / CREFITO..." required />
             </div>
           </div>
 
           <p class="error-text" id="formMsg"></p>
 
-          <button class="btn btn-primary btn-lg" type="submit">Continuar para o consultório digital</button>
-          <a class="btn btn-outline" href="./index.html">Voltar</a>
+          <button class="btn btn-primary btn-lg btn-pulse" type="submit">
+            Continuar
+            <span class="btn-arrow">→</span>
+          </button>
 
-          <p class="footnote">Seus dados são usados apenas para liberar seu acesso profissional.</p>
+          <div class="secure-row tight">
+            <span>🔒 Dados criptografados</span>
+            <span>🛡️ LGPD</span>
+            <span>⏱️ Menos de 2 min</span>
+          </div>
+
+          <p class="footnote">Seus dados são usados apenas para liberar seu acesso profissional. Sem spam.</p>
         </form>
       </article>
     </section>
   </main>
 
   <script src="./app.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var badge = document.querySelector('.badge');
+      if (badge) setTimeout(function () { badge.classList.add('prog-1'); }, 400);
+    });
+  </script>
+  <style>
+    .badge { position: relative; overflow: hidden; }
+    .badge::after {
+      content: ''; position: absolute; bottom: 0; left: 0;
+      height: 3px; width: 0;
+      background: linear-gradient(90deg, #8f2bd3, #bf49f4);
+      border-radius: 99px;
+      transition: width 1s cubic-bezier(.22,1,.36,1);
+    }
+    .badge.prog-1::after { width: 75%; }
+  </style>
 </body>
 </html>

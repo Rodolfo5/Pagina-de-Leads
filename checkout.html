@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Checkout | UpSaude</title>
-  <meta name="description" content="Checkout para garantir a vaga no pré-lançamento do consultório digital." />
+  <title>Checkout seguro | UpSaude</title>
+  <meta name="description" content="Finalize sua vaga no pré-lançamento do consultório digital com pagamento seguro." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -17,19 +17,20 @@
         <img class="brand-logo" src="./public/logo-consultorio-digital.png" alt="Consultório Digital" onerror="this.style.display='none'" />
         <span class="brand-text"><span class="brand-up">UP</span><span class="brand-saude">SAÚDE</span></span>
       </div>
-      <span class="badge">Etapa 3 de 4</span>
+      <span class="badge prog-3">Etapa 8 de 8</span>
     </div>
 
     <section class="content-panel">
-      <p class="kicker">CHECKOUT SEGURO</p>
-      <h1 class="section-title">Garanta sua vaga de pré-lançamento</h1>
+      <p class="kicker">CHECKOUT SEGURO · ÚLTIMO PASSO</p>
+      <h1 class="section-title">
+        <strong data-lead="nome">Profissional</strong>, sua vaga está reservada por tempo limitado.
+      </h1>
       <p class="section-sub">
-        Oferta exclusiva para <strong data-lead="nome">profissional</strong>.
-        Finalize com cartão para ativar o acesso e seguir para criação de login.
+        Finalize com cartão para ativar o acesso imediato e desbloquear seu bônus.
       </p>
 
-      <span class="timer">
-        Oferta encerra em <span class="clock" id="timer">12:00</span>
+      <span class="timer pulse">
+        ⏳ Oferta com 25% OFF encerra em <span class="clock" id="timer">12:00</span>
       </span>
 
       <div class="checkout-grid">
@@ -38,7 +39,7 @@
 
           <div>
             <label for="cardName">Nome no cartão</label>
-            <input id="cardName" name="cardName" type="text" placeholder="Nome impresso no cartao" required />
+            <input id="cardName" name="cardName" type="text" placeholder="Nome impresso no cartão" required />
           </div>
 
           <div>
@@ -66,26 +67,75 @@
           </div>
 
           <p class="error-text" id="checkoutMsg"></p>
-          <button class="btn btn-primary btn-lg" type="submit">Finalizar inscrição e criar login</button>
-          <p class="notice">Ambiente seguro. Seus dados de pagamento são protegidos com criptografia.</p>
+
+          <button class="btn btn-primary btn-lg btn-pulse" type="submit">
+            Finalizar e ativar meu acesso
+            <span class="btn-arrow">→</span>
+          </button>
+
+          <div class="secure-row tight">
+            <span>🔒 SSL 256-bit</span>
+            <span>🛡️ LGPD</span>
+            <span>💳 Pagamento criptografado</span>
+          </div>
+
+          <p class="notice">Ambiente seguro. Seus dados de pagamento são protegidos e nunca armazenados em texto puro.</p>
         </form>
 
         <aside class="summary-box">
-          <h3>Resumo da compra</h3>
-          <p class="pill">Pré-lançamento exclusivo</p>
-          <div style="height: 12px;"></div>
+          <h3>Resumo da sua vaga</h3>
+          <span class="pill">Pré-lançamento exclusivo</span>
+
           <div class="summary-line"><span>Plano Profissional</span><strong>R$ 97,00</strong></div>
-          <div class="summary-line"><span>Desconto de 25%</span><strong>-R$ 24,25</strong></div>
+          <div class="summary-line discount"><span>Desconto pré-lançamento (25%)</span><strong>-R$ 24,25</strong></div>
           <div class="summary-line"><span>Taxa de ativação</span><strong>R$ 0,00</strong></div>
           <div class="summary-total summary-line"><span>Total hoje</span><strong>R$ 72,75</strong></div>
-          <div style="height: 10px;"></div>
-          <div style="height: 16px;"></div>
-          <a class="btn btn-outline" href="./consultorio-digital.html">Voltar</a>
+
+          <div class="bonus-stack tight">
+            <div class="bonus-tag">🎁 INCLUSO</div>
+            <strong>E-book: Dobre seu número de pacientes</strong>
+            <span>Acesso liberado após confirmação.</span>
+          </div>
+
+          <div class="guarantee tight">
+            <div class="guarantee-seal">7<span>dias</span></div>
+            <div>
+              <strong>Garantia incondicional</strong>
+              <span>Devolução de 100% se não gostar.</span>
+            </div>
+          </div>
+
+          <a class="btn btn-outline btn-back" href="./consultorio-digital.html">Voltar</a>
         </aside>
       </div>
     </section>
   </main>
 
   <script src="./app.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      try {
+        var lead = typeof getLead === 'function' ? getLead() : null;
+        var nome = lead && lead.nome ? lead.nome.split(' ')[0] : null;
+        if (nome) {
+          document.querySelectorAll('[data-lead="nome"]').forEach(function (el) {
+            el.textContent = nome;
+          });
+        }
+      } catch (e) {}
+    });
+  </script>
+  <style>
+    .badge { position: relative; overflow: hidden; }
+    .badge::after {
+      content: ''; position: absolute; bottom: 0; left: 0;
+      height: 3px; width: 0;
+      background: linear-gradient(90deg, #8f2bd3, #bf49f4);
+      border-radius: 99px;
+      animation: barFill 1s .4s cubic-bezier(.22,1,.36,1) forwards;
+    }
+    .badge.prog-3::after { --w: 100%; }
+    @keyframes barFill { to { width: 100%; } }
+  </style>
 </body>
 </html>

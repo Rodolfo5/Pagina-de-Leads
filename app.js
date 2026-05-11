@@ -149,7 +149,7 @@ function initCheckout() {
       pagamento: "cartao",
     });
 
-    window.location.href = "https://consultorio.upsaudeapp.com/";
+    window.location.href = "https://consultorio.upsaudeapp.com/login";
   });
 }
 
