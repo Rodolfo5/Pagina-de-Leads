@@ -55,17 +55,17 @@ function initOnboarding() {
     };
 
     if (!payload.nome || payload.nome.length < 3) {
-      msg.textContent = "Informe um nome valido.";
+      msg.textContent = "Informe um nome válido.";
       return;
     }
 
     if (!/^\S+@\S+\.\S+$/.test(payload.email)) {
-      msg.textContent = "Informe um e-mail valido.";
+      msg.textContent = "Informe um e-mail válido.";
       return;
     }
 
     if (!validateCpf(payload.cpf)) {
-      msg.textContent = "CPF invalido. Digite os 11 numeros.";
+      msg.textContent = "CPF inválido. Digite os 11 números.";
       return;
     }
 
@@ -130,17 +130,17 @@ function initCheckout() {
 
     const cardNumber = number.value.replace(/\s/g, "");
     if (cardNumber.length < 16) {
-      msg.textContent = "Numero do cartao incompleto.";
+      msg.textContent = "Número do cartão incompleto.";
       return;
     }
 
     if (!/^\d{2}\/\d{2}$/.test(exp.value)) {
-      msg.textContent = "Validade invalida.";
+      msg.textContent = "Validade inválida.";
       return;
     }
 
     if (cvv.value.length < 3) {
-      msg.textContent = "CVV invalido.";
+      msg.textContent = "CVV inválido.";
       return;
     }
 
@@ -149,7 +149,7 @@ function initCheckout() {
       pagamento: "cartao",
     });
 
-    window.location.href = "./criar-login.html";
+    window.location.href = "https://consultorio.upsaudeapp.com/";
   });
 }
 
@@ -176,7 +176,7 @@ function initLogin() {
     }
 
     if (pwd !== confirm) {
-      msg.textContent = "As senhas nao conferem.";
+      msg.textContent = "As senhas não conferem.";
       return;
     }
 
@@ -188,7 +188,7 @@ function initLogin() {
 
     form.reset();
     msg.className = "success-msg";
-    msg.textContent = "Login criado com sucesso! Seu acesso ao consultorio digital foi liberado.";
+    msg.textContent = "Login criado com sucesso! Seu acesso ao consultório digital foi liberado.";
   });
 }
 

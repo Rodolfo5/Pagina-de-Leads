@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Criar login | UpSaude</title>
-  <meta name="description" content="Crie seu login para acessar o consultorio digital UpSaude." />
+  <meta name="description" content="Crie seu login para acessar o consultório digital UpSaude." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -13,16 +13,19 @@
 <body>
   <main class="page">
     <div class="topbar">
-      <div class="brand">up<span>+</span>saude</div>
+      <div class="brand">
+        <img class="brand-logo" src="./public/logo-consultorio-digital.png" alt="Consultório Digital" onerror="this.style.display='none'" />
+        <span class="brand-text"><span class="brand-up">UP</span><span class="brand-saude">SAÚDE</span></span>
+      </div>
       <span class="badge">Etapa 4 de 4</span>
     </div>
 
     <section class="layout">
       <article class="panel soft">
         <p class="kicker">ACESSO LIBERADO</p>
-        <h1>Crie seu login para entrar no consultorio digital</h1>
+        <h1>Crie seu login para entrar no consultório digital</h1>
         <p>
-          Falta apenas criar sua senha de acesso. Seus dados profissionais ja estao vinculados
+          Falta apenas criar sua senha de acesso. Seus dados profissionais já estão vinculados
           ao e-mail <strong data-lead="email">informado</strong>.
         </p>
 
@@ -33,7 +36,7 @@
           </div>
           <div class="metric">
             <strong>IA</strong>
-            <span>Prontuario assistido</span>
+            <span>Prontuário assistido</span>
           </div>
           <div class="metric">
             <strong>PIX</strong>
@@ -41,7 +44,7 @@
           </div>
           <div class="metric">
             <strong>24/7</strong>
-            <span>Plantao digital</span>
+            <span>Plantão digital</span>
           </div>
         </div>
       </article>
@@ -59,13 +62,13 @@
           </div>
 
           <div>
-            <label for="email">Email de acesso</label>
+            <label for="email">E-mail de acesso</label>
             <input id="email" name="email" type="email" required />
           </div>
 
           <div>
             <label for="senha">Senha</label>
-            <input id="senha" name="senha" type="password" placeholder="Minimo de 8 caracteres" required />
+            <input id="senha" name="senha" type="password" placeholder="Mínimo de 8 caracteres" required />
           </div>
 
           <div>

@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Onboarding | UpSaude</title>
-  <meta name="description" content="Onboarding para profissionais da saude: Nome, E-mail, CPF e CRM." />
+  <meta name="description" content="Onboarding para profissionais da saúde: Nome, E-mail, CPF e CRM." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -13,43 +13,19 @@
 <body>
   <main class="page">
     <div class="topbar">
-      <div class="brand">up<span>+</span>saude</div>
+      <div class="brand">
+        <img class="brand-logo" src="./public/logo-consultorio-digital.png" alt="Consultório Digital" onerror="this.style.display='none'" />
+        <span class="brand-text"><span class="brand-up">UP</span><span class="brand-saude">SAÚDE</span></span>
+      </div>
       <span class="badge">Etapa 1 de 4</span>
     </div>
 
-    <section class="layout">
-      <article class="panel soft">
-        <p class="kicker">ONBOARDING RAPIDO</p>
-        <h1>Seus dados para iniciar no consultorio digital</h1>
-        <p>
-          Em menos de 2 minutos voce completa seu cadastro inicial e desbloqueia o acesso antecipado
-          ao fluxo de pre-lancamento.
-        </p>
-
-        <div class="metrics">
-          <div class="metric">
-            <strong>90 dias</strong>
-            <span>Uso gratuito</span>
-          </div>
-          <div class="metric">
-            <strong>50%</strong>
-            <span>Desconto vitalicio</span>
-          </div>
-          <div class="metric">
-            <strong>+110 mil</strong>
-            <span>Vidas transformadas</span>
-          </div>
-          <div class="metric">
-            <strong>24/7</strong>
-            <span>Plantao digital</span>
-          </div>
-        </div>
-      </article>
+    <section class="layout single">
 
       <article class="panel form-wrap">
         <header class="form-header">
           <h2>Dados profissionais</h2>
-          <p>Preencha Nome, Email, CPF e CRM/registro para continuar.</p>
+          <p>Preencha Nome, E-mail, CPF e CRM/registro para continuar.</p>
         </header>
 
         <form id="onboardingForm" class="form-grid" novalidate>
@@ -59,7 +35,7 @@
           </div>
 
           <div>
-            <label for="email">Email profissional</label>
+            <label for="email">E-mail profissional</label>
             <input id="email" name="email" type="email" placeholder="voce@clinica.com" autocomplete="email" required />
           </div>
 
@@ -76,10 +52,10 @@
 
           <p class="error-text" id="formMsg"></p>
 
-          <button class="btn btn-primary btn-lg" type="submit">Continuar para o consultorio digital</button>
+          <button class="btn btn-primary btn-lg" type="submit">Continuar para o consultório digital</button>
           <a class="btn btn-outline" href="./index.html">Voltar</a>
 
-          <p class="footnote">Seus dados sao usados apenas para liberar seu acesso profissional.</p>
+          <p class="footnote">Seus dados são usados apenas para liberar seu acesso profissional.</p>
         </form>
       </article>
     </section>

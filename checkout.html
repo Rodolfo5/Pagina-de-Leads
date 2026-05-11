@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Checkout | UpSaude</title>
-  <meta name="description" content="Checkout para garantir a vaga no pre-lancamento do consultorio digital." />
+  <meta name="description" content="Checkout para garantir a vaga no pré-lançamento do consultório digital." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -13,16 +13,19 @@
 <body>
   <main class="page">
     <div class="topbar">
-      <div class="brand">up<span>+</span>saude</div>
+      <div class="brand">
+        <img class="brand-logo" src="./public/logo-consultorio-digital.png" alt="Consultório Digital" onerror="this.style.display='none'" />
+        <span class="brand-text"><span class="brand-up">UP</span><span class="brand-saude">SAÚDE</span></span>
+      </div>
       <span class="badge">Etapa 3 de 4</span>
     </div>
 
     <section class="content-panel">
       <p class="kicker">CHECKOUT SEGURO</p>
-      <h1 class="section-title">Garanta sua vaga de pre-lancamento</h1>
+      <h1 class="section-title">Garanta sua vaga de pré-lançamento</h1>
       <p class="section-sub">
         Oferta exclusiva para <strong data-lead="nome">profissional</strong>.
-        Finalize com cartao para ativar o acesso e seguir para criacao de login.
+        Finalize com cartão para ativar o acesso e seguir para criação de login.
       </p>
 
       <span class="timer">
@@ -34,12 +37,12 @@
           <h3>Dados de pagamento</h3>
 
           <div>
-            <label for="cardName">Nome no cartao</label>
+            <label for="cardName">Nome no cartão</label>
             <input id="cardName" name="cardName" type="text" placeholder="Nome impresso no cartao" required />
           </div>
 
           <div>
-            <label for="cardNumber">Numero do cartao</label>
+            <label for="cardNumber">Número do cartão</label>
             <input id="cardNumber" name="cardNumber" type="text" inputmode="numeric" placeholder="0000 0000 0000 0000" required />
           </div>
 
@@ -55,28 +58,27 @@
             <div>
               <label for="installments">Parcelas</label>
               <select id="installments" name="installments">
-                <option>1x de R$ 97,00</option>
-                <option>2x de R$ 50,81</option>
-                <option>3x de R$ 34,52</option>
+                <option>1x de R$ 72,75</option>
+                <option>2x de R$ 36,38</option>
+                <option>3x de R$ 24,25</option>
               </select>
             </div>
           </div>
 
           <p class="error-text" id="checkoutMsg"></p>
-          <button class="btn btn-primary btn-lg" type="submit">Finalizar inscricao e criar login</button>
-          <p class="notice">Ambiente seguro. Seus dados de pagamento sao protegidos com criptografia.</p>
+          <button class="btn btn-primary btn-lg" type="submit">Finalizar inscrição e criar login</button>
+          <p class="notice">Ambiente seguro. Seus dados de pagamento são protegidos com criptografia.</p>
         </form>
 
         <aside class="summary-box">
           <h3>Resumo da compra</h3>
-          <p class="pill">Pre-lancamento exclusivo</p>
+          <p class="pill">Pré-lançamento exclusivo</p>
           <div style="height: 12px;"></div>
-          <div class="summary-line"><span>Plano Profissional</span><strong>R$ 197,00</strong></div>
-          <div class="summary-line"><span>Desconto embaixador</span><strong>-R$ 100,00</strong></div>
-          <div class="summary-line"><span>Taxa de ativacao</span><strong>R$ 0,00</strong></div>
-          <div class="summary-total summary-line"><span>Total hoje</span><strong>R$ 97,00</strong></div>
+          <div class="summary-line"><span>Plano Profissional</span><strong>R$ 97,00</strong></div>
+          <div class="summary-line"><span>Desconto de 25%</span><strong>-R$ 24,25</strong></div>
+          <div class="summary-line"><span>Taxa de ativação</span><strong>R$ 0,00</strong></div>
+          <div class="summary-total summary-line"><span>Total hoje</span><strong>R$ 72,75</strong></div>
           <div style="height: 10px;"></div>
-          <p class="notice">Inclui 90 dias de uso gratuito da plataforma + 50% OFF vitalicio apos o periodo de validacao.</p>
           <div style="height: 16px;"></div>
           <a class="btn btn-outline" href="./consultorio-digital.html">Voltar</a>
         </aside>
