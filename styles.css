@@ -452,6 +452,37 @@ select:focus {
   border: 1px solid rgba(255, 255, 255, 0.22);
 }
 
+.step-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.step-back {
+  width: 30px;
+  height: 30px;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(246, 239, 255, 0.62);
+  font: inherit;
+  font-size: 17px;
+  line-height: 1;
+  cursor: pointer;
+  transition: color .2s ease, background .2s ease, border-color .2s ease, transform .2s ease;
+}
+
+.step-back:hover,
+.step-back:focus-visible {
+  color: #f6efff;
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.24);
+  transform: translateX(-1px);
+  outline: none;
+}
+
 .content-panel {
   background: #fff;
   border-radius: var(--radius);
