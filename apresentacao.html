@@ -11,24 +11,35 @@
   <link rel="stylesheet" href="./styles.css" />
   <style>
     .text-back {
+      width: 34px;
+      height: 44px;
+      display: inline-grid;
+      place-items: center;
       background: transparent;
       border: 0;
-      color: #4f5675;
+      border-radius: 0;
+      color: #f8f3ff;
       font-weight: 700;
-      padding: 0;
+      font-size: 30px;
+      line-height: 1;
+      padding: 0 0 4px;
       cursor: pointer;
       text-decoration: none;
+      box-shadow: none;
+      transition: transform .22s ease, color .22s ease;
     }
 
     .text-back:hover {
-      color: #232742;
-      text-decoration: underline;
+      color: #fff;
+      background: transparent;
+      border-color: transparent;
+      text-decoration: none;
+      transform: translateY(-3px);
     }
 
     .text-back:focus-visible {
-      outline: 2px solid #232742;
-      outline-offset: 2px;
-      border-radius: 4px;
+      outline: 2px solid rgba(255, 110, 249, 0.75);
+      outline-offset: 3px;
     }
   </style>
 </head>
@@ -41,16 +52,30 @@
 
   <main class="lp">
     <div class="topbar lp-topbar">
+      <div class="step-actions">
+        <div class="badge dyn-prog progress-status" id="globalBadge" style="--w: 12.5%" data-active="1" role="status" aria-live="polite">
+          <div class="progress-copy">
+            <span class="progress-label">Etapa 1 de 8</span>
+          </div>
+          <div class="progress-track" aria-hidden="true">
+            <span class="progress-dot is-active"><svg viewBox="0 0 24 24"><path d="M12 7v6"></path><path d="M12 17h.01"></path><path d="M10.3 3.9 2.7 17.2A2 2 0 0 0 4.4 20h15.2a2 2 0 0 0 1.7-2.8L13.7 3.9a2 2 0 0 0-3.4 0Z"></path></svg></span>
+            <span class="progress-dot"><svg viewBox="0 0 24 24"><path d="m12 3 1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9L12 3Z"></path><path d="m19 15 .8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8L19 15Z"></path></svg></span>
+            <span class="progress-dot"><svg viewBox="0 0 24 24"><path d="M15 10.5a3 3 0 1 0-6 0"></path><path d="M7 20h10"></path><path d="M8 14h8a3 3 0 0 1 3 3v3H5v-3a3 3 0 0 1 3-3Z"></path><path d="M17 8l2-2"></path></svg></span>
+            <span class="progress-dot"><svg viewBox="0 0 24 24"><path d="M12 3v18"></path><path d="M17 6H9.5a3.5 3.5 0 0 0 0 7H14a3.5 3.5 0 0 1 0 7H6"></path></svg></span>
+            <span class="progress-dot"><svg viewBox="0 0 24 24"><path d="M20 7 9 18l-5-5"></path><path d="M4 7h8"></path><path d="M4 12h5"></path></svg></span>
+            <span class="progress-dot"><svg viewBox="0 0 24 24"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"></path><path d="M4 21a8 8 0 0 1 16 0"></path></svg></span>
+            <span class="progress-dot"><svg viewBox="0 0 24 24"><path d="M9 11h6"></path><path d="M9 15h6"></path><path d="M8 3h8l3 3v15H5V3h3Z"></path><path d="M16 3v4h4"></path></svg></span>
+            <span class="progress-dot"><svg viewBox="0 0 24 24"><path d="M3 7h18v10H3z"></path><path d="M3 10h18"></path><path d="M7 15h3"></path></svg></span>
+          </div>
+        </div>
+      </div>
       <div class="brand">
         <span class="brand-text"><span class="brand-up">UP</span><span class="brand-saude">SAÚDE</span></span>
-      </div>
-      <div class="step-actions">
-        <span class="badge dyn-prog" id="globalBadge" style="--w: 12.5%">Etapa 1 de 8</span>
       </div>
     </div>
 
     <div class="wizard" id="wizard">
-      <section class="slide active" data-slide="1">
+      <section class="slide" data-slide="3">
         <span class="chip chip-glow"><span class="chip-dot"></span> Pré-lançamento aberto · vagas limitadas</span>
         <h1 class="slide-title">Dobre seus atendimentos de forma <span class="grad-text">profissional e automatizada</span>.</h1>
         <p class="slide-lead">Agenda, prontuário com IA e teleconsulta em um único ecossistema para médicos, psicólogos, nutricionistas, fisioterapeutas, odontólogos e educadores físicos.</p>
@@ -67,53 +92,164 @@
         </div>
 
         <div class="slide-nav">
-          <button class="text-back" type="button" data-prev>&larr; Voltar</button>
+          <button class="text-back" type="button" data-prev aria-label="Voltar">&lt;</button>
           <button class="btn btn-primary btn-lg btn-pulse" type="button" data-next>
-            Próximo
+            Quero aproveitar essa oportunidade
+            <span class="btn-arrow">&rarr;</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="slide active" data-slide="1">
+        <h2 class="slide-title">Toque nos pontos de atrito e veja onde você perde receita</h2>
+
+        <div class="pain-lab" data-pain-lab>
+          <div class="pain-grid pain-grid-interactive">
+              <button class="pain-card" type="button" aria-pressed="false" data-impact="Confirmações manuais drenam horas e deixam faltas passarem sem reação.">
+                <span class="pain-card-inner">
+                  <span class="pain-card-face pain-card-front">
+                    <span class="pain-chip">Tempo perdido</span>
+                    <h3>Agenda no caderno ou WhatsApp</h3>
+                    <p>Você perde tempo confirmando consulta por mensagem e ainda assim leva faltas toda semana.</p>
+                  </span>
+                  <span class="pain-card-face pain-card-back">
+                    <span class="pain-chip">Como voce perde receita</span>
+                    <h3>Agenda desalinhada</h3>
+                    <p>Confirmações manuais drenam horas e deixam faltas passarem sem reação.</p>
+                  </span>
+                </span>
+            </button>
+              <button class="pain-card" type="button" aria-pressed="false" data-impact="A consulta acaba, mas o trabalho continua à noite, quando sua energia já terminou.">
+                <span class="pain-card-inner">
+                  <span class="pain-card-face pain-card-front">
+                    <span class="pain-chip">Noite ocupada</span>
+                    <h3>Prontuário toma sua noite</h3>
+                    <p>Você termina o dia exausto digitando evolução e sente que ficou incompleto.</p>
+                  </span>
+                  <span class="pain-card-face pain-card-back">
+                    <span class="pain-chip">Como voce perde receita</span>
+                    <h3>Noite consumida</h3>
+                    <p>A consulta acaba, mas o trabalho continua à noite, quando sua energia já terminou.</p>
+                  </span>
+                </span>
+            </button>
+              <button class="pain-card" type="button" aria-pressed="false" data-impact="Atendimento improvisado reduz percepção de valor e dificulta cobrar como profissional.">
+                <span class="pain-card-inner">
+                  <span class="pain-card-face pain-card-front">
+                    <span class="pain-chip">Imagem frágil</span>
+                    <h3>Telemedicina improvisada</h3>
+                    <p>Atender por chamada comum passa imagem amadora e dificulta cobrança profissional.</p>
+                  </span>
+                  <span class="pain-card-face pain-card-back">
+                    <span class="pain-chip">Como voce perde receita</span>
+                    <h3>Valor percebido cai</h3>
+                    <p>Atendimento improvisado reduz percepção de valor e dificulta cobrar como profissional.</p>
+                  </span>
+                </span>
+            </button>
+              <button class="pain-card" type="button" aria-pressed="false" data-impact="Sem base unificada, pacientes somem sem alerta e oportunidades ficam paradas.">
+                <span class="pain-card-inner">
+                  <span class="pain-card-face pain-card-front">
+                    <span class="pain-chip">Receita parada</span>
+                    <h3>Pacientes que somem</h3>
+                    <p>Sem base unificada é impossível reativar quem deixou de voltar.</p>
+                  </span>
+                  <span class="pain-card-face pain-card-back">
+                    <span class="pain-chip">Como voce perde receita</span>
+                    <h3>Oportunidades somem</h3>
+                    <p>Sem base unificada, pacientes somem sem alerta e oportunidades ficam paradas.</p>
+                  </span>
+                </span>
+            </button>
+          </div>
+        </div>
+
+        <div class="slide-nav">
+          <button class="text-back" type="button" data-prev aria-label="Voltar">&lt;</button>
+          <button class="btn btn-primary btn-lg btn-pulse" type="button" data-next>
+            Quero resolver isso agora
             <span class="btn-arrow">&rarr;</span>
           </button>
         </div>
       </section>
 
       <section class="slide" data-slide="2">
-        <p class="kicker">O DIA A DIA QUE TRAVA SEU CRESCIMENTO</p>
-        <h2 class="slide-title">Reconhece alguma dessas situações?</h2>
-        <p class="slide-lead">Cada hora perdida no improviso é paciente que não volta e receita que não entra.</p>
+        <h2 class="slide-title">Veja como resolvemos os problemas</h2>
 
-        <div class="pain-grid">
-          <div class="pain-card"><span class="pain-x">X</span><h3>Agenda no caderno ou WhatsApp</h3><p>Você perde tempo confirmando consulta por mensagem e ainda assim leva faltas toda semana.</p></div>
-          <div class="pain-card"><span class="pain-x">X</span><h3>Prontuário toma sua noite</h3><p>Você termina o dia exausto digitando evolução e sente que ficou incompleto.</p></div>
-          <div class="pain-card"><span class="pain-x">X</span><h3>Telemedicina improvisada</h3><p>Atender por chamada comum passa imagem amadora e dificulta cobrança profissional.</p></div>
-          <div class="pain-card"><span class="pain-x">X</span><h3>Pacientes que somem</h3><p>Sem base unificada é impossível reativar quem deixou de voltar.</p></div>
+        <div class="solution-stage" data-solution-stage>
+          <div class="solution-switcher" role="tablist" aria-label="Frentes da plataforma">
+            <button class="solution-tab is-active" type="button" role="tab" aria-selected="true" data-solution-label="Agenda inteligente" data-solution-problem="Você perdia tempo confirmando consulta por mensagem e ainda levava faltas semanais." data-solution-action="A agenda envia lembretes, confirma presença e reorganiza sua rotina sem depender de WhatsApp manual." data-solution-result="Sua agenda para de vazar receita e o paciente chega mais preparado para a consulta.">
+              <span class="solution-tab-kicker">Faltas e atrasos</span>
+              <strong>Agenda inteligente</strong>
+            </button>
+            <button class="solution-tab" type="button" role="tab" aria-selected="false" data-solution-label="Prontuário com IA" data-solution-problem="Seu dia acabava e o trabalho continuava de noite, com evolução atrasada e energia no fim." data-solution-action="A IA estrutura o prontuário a partir do atendimento e deixa para você apenas revisar e finalizar." data-solution-result="Você encerra a consulta com registro pronto, ganha tempo e reduz o peso operacional depois do expediente.">
+              <span class="solution-tab-kicker">Noite ocupada</span>
+              <strong>Prontuário com IA</strong>
+            </button>
+            <button class="solution-tab" type="button" role="tab" aria-selected="false" data-solution-label="Telemedicina profissional" data-solution-problem="Atender por chamada comum enfraquecia sua imagem e dificultava sustentar uma cobrança premium." data-solution-action="A sala profissional concentra chamada segura, prescrição digital e fluxo de pagamento no mesmo atendimento." data-solution-result="Sua consulta online passa mais autoridade, melhora a experiência do paciente e sustenta valor percebido.">
+              <span class="solution-tab-kicker">Imagem profissional</span>
+              <strong>Telemedicina profissional</strong>
+            </button>
+            <button class="solution-tab" type="button" role="tab" aria-selected="false" data-solution-label="Base única e reativação" data-solution-problem="Sem base centralizada, pacientes sumiam sem alerta e oportunidades de retorno morriam no esquecimento." data-solution-action="A plataforma centraliza histórico, sinaliza pacientes inativos e dispara ações de retorno no momento certo." data-solution-result="Você volta a ter previsibilidade de receita e reaproveita pacientes que já confiaram no seu trabalho.">
+              <span class="solution-tab-kicker">Receita parada</span>
+              <strong>Base única e reativação</strong>
+            </button>
+          </div>
+
+          <article class="solution-focus" aria-live="polite">
+            <div class="solution-focus-head">
+              <span class="solution-focus-tag">Resposta operacional</span>
+              <h3 data-solution-label>Agenda inteligente</h3>
+              <p>Da dor operacional para uma rotina mais previsível, sem improviso.</p>
+            </div>
+
+            <div class="solution-story-grid">
+              <section class="solution-story-card problem is-open" data-story-card>
+                <button class="solution-story-toggle" type="button" data-story-toggle aria-expanded="true">
+                  <span>
+                    <span class="solution-story-eyebrow">Antes</span>
+                    <strong>O problema</strong>
+                  </span>
+                  <span class="solution-story-icon" aria-hidden="true">+</span>
+                </button>
+                <div class="solution-story-body" data-story-body>
+                  <p data-solution-problem>Você perdia tempo confirmando consulta por mensagem e ainda levava faltas semanais.</p>
+                </div>
+              </section>
+
+              <section class="solution-story-card action" data-story-card>
+                <button class="solution-story-toggle" type="button" data-story-toggle aria-expanded="false">
+                  <span>
+                    <span class="solution-story-eyebrow">Durante</span>
+                    <strong>Como resolve</strong>
+                  </span>
+                  <span class="solution-story-icon" aria-hidden="true">+</span>
+                </button>
+                <div class="solution-story-body" data-story-body>
+                  <p data-solution-action>A agenda envia lembretes, confirma presença e reorganiza sua rotina sem depender de WhatsApp manual.</p>
+                </div>
+              </section>
+
+              <section class="solution-story-card result" data-story-card>
+                <button class="solution-story-toggle" type="button" data-story-toggle aria-expanded="false">
+                  <span>
+                    <span class="solution-story-eyebrow">Depois</span>
+                    <strong>O ganho direto</strong>
+                  </span>
+                  <span class="solution-story-icon" aria-hidden="true">+</span>
+                </button>
+                <div class="solution-story-body" data-story-body>
+                  <p data-solution-result>Sua agenda para de vazar receita e o paciente chega mais preparado para a consulta.</p>
+                </div>
+              </section>
+            </div>
+          </article>
         </div>
 
         <div class="slide-nav">
-          <button class="text-back" type="button" data-prev>&larr; Voltar</button>
+          <button class="text-back" type="button" data-prev aria-label="Voltar">&lt;</button>
           <button class="btn btn-primary btn-lg btn-pulse" type="button" data-next>
-            Próximo
-            <span class="btn-arrow">&rarr;</span>
-          </button>
-        </div>
-      </section>
-
-      <section class="slide" data-slide="3">
-        <p class="kicker">A PLATAFORMA QUE FAZ O TRABALHO POR VOCÊ</p>
-        <h2 class="slide-title">Um consultório digital completo, em um único lugar.</h2>
-        <p class="slide-lead">Pare de costurar 5 ferramentas. Tudo que você precisa para atender, cobrar e fidelizar.</p>
-
-        <div class="solution-grid">
-          <article class="sol-card"><div class="sol-icon">IA</div><h3>Prontuário com IA</h3><p>A IA escuta a consulta e gera o prontuário pronto para revisão.</p></article>
-          <article class="sol-card highlight"><div class="sol-icon">AG</div><h3>Agenda inteligente</h3><p>Confirmações automáticas e lembretes que reduzem faltas.</p><span class="sol-tag">Mais usada</span></article>
-          <article class="sol-card"><div class="sol-icon">TM</div><h3>Telemedicina profissional</h3><p>Sala segura, prescrição digital e cobrança integrada.</p></article>
-          <article class="sol-card"><div class="sol-icon">BD</div><h3>Base única de pacientes</h3><p>Histórico, anotações e documentos centralizados.</p></article>
-          <article class="sol-card"><div class="sol-icon">PG</div><h3>Cobrança integrada</h3><p>Pix, cartão e recorrência sem gateway externo.</p></article>
-          <article class="sol-card"><div class="sol-icon">RT</div><h3>Reativação automática</h3><p>Pacientes que sumiram voltam com fluxos automáticos.</p></article>
-        </div>
-
-        <div class="slide-nav">
-          <button class="text-back" type="button" data-prev>&larr; Voltar</button>
-          <button class="btn btn-primary btn-lg btn-pulse" type="button" data-next>
-            Próximo
+            Quero ver como a plataforma funciona
             <span class="btn-arrow">&rarr;</span>
           </button>
         </div>
@@ -146,9 +282,9 @@
         </div>
 
         <div class="slide-nav">
-          <button class="text-back" type="button" data-prev>&larr; Voltar</button>
+          <button class="text-back" type="button" data-prev aria-label="Voltar">&lt;</button>
           <button class="btn btn-primary btn-lg btn-pulse" type="button" data-next>
-            Próximo
+            Quero esse resultado no meu consultório
             <span class="btn-arrow">&rarr;</span>
           </button>
         </div>
@@ -188,9 +324,9 @@
         </div>
 
         <div class="slide-nav">
-          <button class="text-back" type="button" data-prev>&larr; Voltar</button>
+          <button class="text-back" type="button" data-prev aria-label="Voltar">&lt;</button>
           <button class="btn btn-primary btn-lg btn-pulse" type="button" data-next>
-            Quero garantir minha vaga
+            Quero garantir minha condição especial
             <span class="btn-arrow">&rarr;</span>
           </button>
         </div>
@@ -227,9 +363,9 @@
         </form>
 
         <div class="slide-nav">
-          <button class="text-back" type="button" data-prev>&larr; Voltar</button>
+          <button class="text-back" type="button" data-prev aria-label="Voltar">&lt;</button>
           <button class="btn btn-primary btn-lg btn-pulse" type="button" id="step6Next">
-            Continuar
+            Quero liberar meu acesso
             <span class="btn-arrow">&rarr;</span>
           </button>
         </div>
@@ -262,9 +398,9 @@
         </div>
 
         <div class="slide-nav">
-          <button class="text-back" type="button" data-prev>&larr; Voltar</button>
+          <button class="text-back" type="button" data-prev aria-label="Voltar">&lt;</button>
           <button class="btn btn-primary btn-lg btn-pulse" type="button" data-next>
-            Ir para o pagamento
+            Quero ativar minha vaga agora
             <span class="btn-arrow">&rarr;</span>
           </button>
         </div>
@@ -312,7 +448,7 @@
 
             <p class="error-text" id="checkoutMsg"></p>
 
-            <button class="btn btn-primary btn-lg btn-pulse" type="submit">Finalizar e ativar meu acesso <span class="btn-arrow">&rarr;</span></button>
+            <button class="btn btn-primary btn-lg btn-pulse" type="submit">Ativar meu acesso agora <span class="btn-arrow">&rarr;</span></button>
           </form>
 
           <aside class="summary-box">
@@ -324,7 +460,7 @@
         </div>
 
         <div class="slide-nav">
-          <button class="text-back" type="button" data-prev>&larr; Voltar</button>
+          <button class="text-back" type="button" data-prev aria-label="Voltar">&lt;</button>
         </div>
       </section>
     </div>
@@ -350,8 +486,24 @@
         });
 
         if (badge) {
-          badge.textContent = 'Etapa ' + n + ' de ' + total;
+          var badgeLabel = badge.querySelector('.progress-label');
+          var progressDots = Array.prototype.slice.call(badge.querySelectorAll('.progress-dot'));
+          var labelText = 'Etapa ' + n + ' de ' + total;
+
+          if (badgeLabel) {
+            badgeLabel.textContent = labelText;
+          } else {
+            badge.textContent = labelText;
+          }
+
+          badge.setAttribute('data-active', String(n));
+          badge.setAttribute('aria-label', labelText);
           badge.style.setProperty('--w', (n / total * 100) + '%');
+
+          progressDots.forEach(function (dot, index) {
+            dot.classList.toggle('is-active', index + 1 === n);
+            dot.classList.toggle('is-done', index + 1 < n);
+          });
         }
 
         current = n;
@@ -562,6 +714,99 @@
         });
       }
 
+      function initPainLab() {
+        var lab = document.querySelector('[data-pain-lab]');
+        if (!lab) return;
+
+        var cards = Array.prototype.slice.call(lab.querySelectorAll('.pain-card'));
+
+        cards.forEach(function (card) {
+          card.addEventListener('click', function () {
+            var isFlipped = card.classList.contains('is-flipped');
+
+            cards.forEach(function (item) {
+              item.classList.remove('is-flipped');
+              item.setAttribute('aria-pressed', 'false');
+            });
+
+            if (!isFlipped) {
+              card.classList.add('is-flipped');
+              card.setAttribute('aria-pressed', 'true');
+            }
+          });
+        });
+      }
+
+      function initSolutionStage() {
+        var stage = document.querySelector('[data-solution-stage]');
+        if (!stage) return;
+
+        var tabs = Array.prototype.slice.call(stage.querySelectorAll('.solution-tab'));
+        var focus = stage.querySelector('.solution-focus');
+        var label = focus ? focus.querySelector('[data-solution-label]') : null;
+        var problem = focus ? focus.querySelector('[data-solution-problem]') : null;
+        var action = focus ? focus.querySelector('[data-solution-action]') : null;
+        var result = focus ? focus.querySelector('[data-solution-result]') : null;
+        var storyCards = focus ? Array.prototype.slice.call(focus.querySelectorAll('[data-story-card]')) : [];
+
+        function openStoryCard(targetCard) {
+          storyCards.forEach(function (card) {
+            var isOpen = card === targetCard;
+            card.classList.toggle('is-open', isOpen);
+
+            var toggle = card.querySelector('[data-story-toggle]');
+            if (toggle) {
+              toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            }
+          });
+        }
+
+        function activate(tab) {
+          tabs.forEach(function (item) {
+            var active = item === tab;
+            item.classList.toggle('is-active', active);
+            item.setAttribute('aria-selected', active ? 'true' : 'false');
+          });
+
+          if (label) label.textContent = tab.dataset.solutionLabel || '';
+          if (problem) problem.textContent = tab.dataset.solutionProblem || '';
+          if (action) action.textContent = tab.dataset.solutionAction || '';
+          if (result) result.textContent = tab.dataset.solutionResult || '';
+
+          if (storyCards.length) {
+            openStoryCard(storyCards[0]);
+          }
+
+          if (focus) {
+            focus.classList.remove('is-switching');
+            void focus.offsetWidth;
+            focus.classList.add('is-switching');
+            window.setTimeout(function () {
+              focus.classList.remove('is-switching');
+            }, 380);
+          }
+        }
+
+        tabs.forEach(function (tab) {
+          tab.addEventListener('click', function () {
+            activate(tab);
+          });
+        });
+
+        storyCards.forEach(function (card) {
+          var toggle = card.querySelector('[data-story-toggle]');
+          if (!toggle) return;
+
+          toggle.addEventListener('click', function () {
+            openStoryCard(card);
+          });
+        });
+
+        if (storyCards.length) {
+          openStoryCard(storyCards[0]);
+        }
+      }
+
       wizard.addEventListener('click', function (e) {
         var next = e.target.closest('[data-next]');
         var prev = e.target.closest('[data-prev]');
@@ -649,6 +894,19 @@
         }
       });
 
+      window.addEventListener('hashchange', function () {
+        var nextHash = window.location.hash.match(/^#step-(\d+)$/);
+        if (!nextHash) return;
+
+        var target = Number(nextHash[1]);
+        if (target > 6 && !validateStep6()) {
+          go(6);
+          return;
+        }
+
+        go(target);
+      });
+
       if (initialHash) {
         var target = Number(initialHash[1]);
         if (target > 6 && !validateStep6()) {
@@ -661,6 +919,8 @@
       }
 
       syncLeadName();
+      initPainLab();
+      initSolutionStage();
       tickTimer();
       setInterval(tickTimer, 1000);
     });
