@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./styles.css?v=20260527" />
+  <link rel="stylesheet" href="./styles.css?v=20260527c" />
   <style>
     .text-back {
       width: 44px;
@@ -100,66 +100,127 @@
       </section>
 
       <section class="slide active" data-slide="1">
-        <h2 class="slide-title">Toque nos pontos de atrito e veja onde você perde receita</h2>
+        <h2 class="slide-title">Toque no ícone e veja onde você perde receita</h2>
+        <p class="pain-hint" data-pain-hint>Toque em cada ícone para descobrir o impacto</p>
 
         <div class="pain-lab" data-pain-lab>
-          <div class="pain-grid pain-grid-interactive">
-              <button class="pain-card" type="button" aria-pressed="false" data-impact="Confirmações manuais drenam horas e deixam faltas passarem sem reação.">
-                <span class="pain-card-inner">
-                  <span class="pain-card-face pain-card-front">
-                    <span class="pain-chip">Tempo perdido</span>
-                    <h3>Agenda no caderno ou WhatsApp</h3>
-                    <p>Você perde tempo confirmando consulta por mensagem e ainda assim leva faltas toda semana.</p>
-                  </span>
-                  <span class="pain-card-face pain-card-back">
-                    <span class="pain-chip">Como voce perde receita</span>
-                    <h3>Agenda desalinhada</h3>
-                    <p>Confirmações manuais drenam horas e deixam faltas passarem sem reação.</p>
-                  </span>
+          <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+            <defs>
+              <linearGradient id="painGradBlue" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#7aa6ff"/>
+                <stop offset="100%" stop-color="#3358d4"/>
+              </linearGradient>
+              <linearGradient id="painGradPurple" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#b691ff"/>
+                <stop offset="100%" stop-color="#5b2bbf"/>
+              </linearGradient>
+              <linearGradient id="painGradPink" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#ffb38a"/>
+                <stop offset="100%" stop-color="#ff5fb1"/>
+              </linearGradient>
+              <linearGradient id="painGradGreen" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#8dffb8"/>
+                <stop offset="100%" stop-color="#1fa463"/>
+              </linearGradient>
+              <linearGradient id="painSheen" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="rgba(255,255,255,0.55)"/>
+                <stop offset="60%" stop-color="rgba(255,255,255,0.05)"/>
+                <stop offset="100%" stop-color="rgba(0,0,0,0.25)"/>
+              </linearGradient>
+            </defs>
+          </svg>
+
+          <div class="pain-stage" data-pain-stage>
+            <article class="pain-step is-active" data-pain-step="0">
+              <button class="pain-launcher" type="button" data-pain-open aria-label="Ver o problema: Tempo perdido">
+                <span class="pain-launcher-icon pain-icon-3d pain-icon-blue" aria-hidden="true">
+                  <svg viewBox="0 0 64 64"><rect x="6" y="6" width="52" height="52" rx="14" fill="url(#painGradBlue)"/><rect x="6" y="6" width="52" height="22" rx="14" fill="url(#painSheen)" opacity="0.45"/><rect x="14" y="16" width="36" height="34" rx="5" fill="#fff" opacity="0.95"/><rect x="14" y="16" width="36" height="9" rx="5" fill="#cfd8ff"/><circle cx="20" cy="14" r="2.4" fill="#fff"/><circle cx="44" cy="14" r="2.4" fill="#fff"/><rect x="19" y="30" width="6" height="5" rx="1.2" fill="#3358d4"/><rect x="29" y="30" width="6" height="5" rx="1.2" fill="#3358d4"/><rect x="39" y="30" width="6" height="5" rx="1.2" fill="#3358d4"/><rect x="19" y="39" width="6" height="5" rx="1.2" fill="#7aa6ff"/><rect x="29" y="39" width="6" height="5" rx="1.2" fill="#7aa6ff"/></svg>
                 </span>
-            </button>
-              <button class="pain-card" type="button" aria-pressed="false" data-impact="A consulta acaba, mas o trabalho continua à noite, quando sua energia já terminou.">
-                <span class="pain-card-inner">
-                  <span class="pain-card-face pain-card-front">
-                    <span class="pain-chip">Noite ocupada</span>
-                    <h3>Prontuário toma sua noite</h3>
-                    <p>Você termina o dia exausto digitando evolução e sente que ficou incompleto.</p>
-                  </span>
-                  <span class="pain-card-face pain-card-back">
-                    <span class="pain-chip">Como voce perde receita</span>
-                    <h3>Noite consumida</h3>
-                    <p>A consulta acaba, mas o trabalho continua à noite, quando sua energia já terminou.</p>
-                  </span>
+                <span class="pain-launcher-label">Tempo perdido</span>
+                <span class="pain-launcher-cta">Toque para ver</span>
+              </button>
+              <div class="pain-reveal" data-pain-reveal hidden>
+                <span class="pain-reveal-icon pain-icon-3d pain-icon-blue" aria-hidden="true">
+                  <svg viewBox="0 0 64 64"><rect x="6" y="6" width="52" height="52" rx="14" fill="url(#painGradBlue)"/><rect x="6" y="6" width="52" height="22" rx="14" fill="url(#painSheen)" opacity="0.45"/><rect x="14" y="16" width="36" height="34" rx="5" fill="#fff" opacity="0.95"/><rect x="14" y="16" width="36" height="9" rx="5" fill="#cfd8ff"/><rect x="19" y="30" width="6" height="5" rx="1.2" fill="#3358d4"/><rect x="29" y="30" width="6" height="5" rx="1.2" fill="#3358d4"/><rect x="39" y="30" width="6" height="5" rx="1.2" fill="#3358d4"/><rect x="19" y="39" width="6" height="5" rx="1.2" fill="#7aa6ff"/><rect x="29" y="39" width="6" height="5" rx="1.2" fill="#7aa6ff"/></svg>
                 </span>
-            </button>
-              <button class="pain-card" type="button" aria-pressed="false" data-impact="Atendimento improvisado reduz percepção de valor e dificulta cobrar como profissional.">
-                <span class="pain-card-inner">
-                  <span class="pain-card-face pain-card-front">
-                    <span class="pain-chip">Imagem frágil</span>
-                    <h3>Telemedicina improvisada</h3>
-                    <p>Atender por chamada comum passa imagem amadora e dificulta cobrança profissional.</p>
-                  </span>
-                  <span class="pain-card-face pain-card-back">
-                    <span class="pain-chip">Como voce perde receita</span>
-                    <h3>Valor percebido cai</h3>
-                    <p>Atendimento improvisado reduz percepção de valor e dificulta cobrar como profissional.</p>
-                  </span>
+                <span class="pain-chip">Como você perde receita</span>
+                <h3>Agenda desalinhada</h3>
+                <p>Confirmações manuais drenam horas e deixam faltas passarem sem reação.</p>
+                <button class="pain-next" type="button" data-pain-next aria-label="Próximo problema">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 5 7 7-7 7"></path></svg>
+                </button>
+              </div>
+            </article>
+
+            <article class="pain-step" data-pain-step="1">
+              <button class="pain-launcher" type="button" data-pain-open aria-label="Ver o problema: Noite ocupada">
+                <span class="pain-launcher-icon pain-icon-3d pain-icon-purple" aria-hidden="true">
+                  <svg viewBox="0 0 64 64"><rect x="6" y="6" width="52" height="52" rx="14" fill="url(#painGradPurple)"/><rect x="6" y="6" width="52" height="22" rx="14" fill="url(#painSheen)" opacity="0.4"/><path d="M44 38a14 14 0 1 1-18-18 11 11 0 0 0 18 18Z" fill="#fff"/><circle cx="42" cy="20" r="1.6" fill="#fff"/><circle cx="47" cy="26" r="1.2" fill="#fff"/></svg>
                 </span>
-            </button>
-              <button class="pain-card" type="button" aria-pressed="false" data-impact="Sem base unificada, pacientes somem sem alerta e oportunidades ficam paradas.">
-                <span class="pain-card-inner">
-                  <span class="pain-card-face pain-card-front">
-                    <span class="pain-chip">Receita parada</span>
-                    <h3>Pacientes que somem</h3>
-                    <p>Sem base unificada é impossível reativar quem deixou de voltar.</p>
-                  </span>
-                  <span class="pain-card-face pain-card-back">
-                    <span class="pain-chip">Como voce perde receita</span>
-                    <h3>Oportunidades somem</h3>
-                    <p>Sem base unificada, pacientes somem sem alerta e oportunidades ficam paradas.</p>
-                  </span>
+                <span class="pain-launcher-label">Noite ocupada</span>
+                <span class="pain-launcher-cta">Toque para ver</span>
+              </button>
+              <div class="pain-reveal" data-pain-reveal hidden>
+                <span class="pain-reveal-icon pain-icon-3d pain-icon-purple" aria-hidden="true">
+                  <svg viewBox="0 0 64 64"><rect x="6" y="6" width="52" height="52" rx="14" fill="url(#painGradPurple)"/><rect x="6" y="6" width="52" height="22" rx="14" fill="url(#painSheen)" opacity="0.4"/><path d="M44 38a14 14 0 1 1-18-18 11 11 0 0 0 18 18Z" fill="#fff"/></svg>
                 </span>
-            </button>
+                <span class="pain-chip">Como você perde receita</span>
+                <h3>Noite consumida</h3>
+                <p>A consulta acaba, mas o trabalho continua à noite, quando sua energia já terminou.</p>
+                <button class="pain-next" type="button" data-pain-next aria-label="Próximo problema">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 5 7 7-7 7"></path></svg>
+                </button>
+              </div>
+            </article>
+
+            <article class="pain-step" data-pain-step="2">
+              <button class="pain-launcher" type="button" data-pain-open aria-label="Ver o problema: Imagem frágil">
+                <span class="pain-launcher-icon pain-icon-3d pain-icon-pink" aria-hidden="true">
+                  <svg viewBox="0 0 64 64"><rect x="6" y="6" width="52" height="52" rx="14" fill="url(#painGradPink)"/><rect x="6" y="6" width="52" height="22" rx="14" fill="url(#painSheen)" opacity="0.45"/><path d="M32 18c-7 0-12 5-12 11 0 3 1.4 5.5 3.6 7.2-.4 1 .1 2.3 1.1 2.9-.8 1.2-.3 2.9 1.1 3.4l1.8.6c0 1.6 1.3 3 3 3h2.8c1.7 0 3-1.4 3-3l1.8-.6c1.4-.5 1.9-2.2 1.1-3.4 1-.6 1.5-1.9 1.1-2.9C42.6 34.5 44 32 44 29c0-6-5-11-12-11Z" fill="#fff"/><path d="M27 30c1 2 3 3 5 3s4-1 5-3" stroke="#ff5fb1" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+                </span>
+                <span class="pain-launcher-label">Imagem frágil</span>
+                <span class="pain-launcher-cta">Toque para ver</span>
+              </button>
+              <div class="pain-reveal" data-pain-reveal hidden>
+                <span class="pain-reveal-icon pain-icon-3d pain-icon-pink" aria-hidden="true">
+                  <svg viewBox="0 0 64 64"><rect x="6" y="6" width="52" height="52" rx="14" fill="url(#painGradPink)"/><rect x="6" y="6" width="52" height="22" rx="14" fill="url(#painSheen)" opacity="0.45"/><path d="M32 18c-7 0-12 5-12 11 0 3 1.4 5.5 3.6 7.2-.4 1 .1 2.3 1.1 2.9-.8 1.2-.3 2.9 1.1 3.4l1.8.6c0 1.6 1.3 3 3 3h2.8c1.7 0 3-1.4 3-3l1.8-.6c1.4-.5 1.9-2.2 1.1-3.4 1-.6 1.5-1.9 1.1-2.9C42.6 34.5 44 32 44 29c0-6-5-11-12-11Z" fill="#fff"/></svg>
+                </span>
+                <span class="pain-chip">Como você perde receita</span>
+                <h3>Valor percebido cai</h3>
+                <p>Atendimento improvisado reduz percepção de valor e dificulta cobrar como profissional.</p>
+                <button class="pain-next" type="button" data-pain-next aria-label="Próximo problema">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 5 7 7-7 7"></path></svg>
+                </button>
+              </div>
+            </article>
+
+            <article class="pain-step" data-pain-step="3">
+              <button class="pain-launcher" type="button" data-pain-open aria-label="Ver o problema: Receita parada">
+                <span class="pain-launcher-icon pain-icon-3d pain-icon-green" aria-hidden="true">
+                  <svg viewBox="0 0 64 64"><rect x="6" y="6" width="52" height="52" rx="14" fill="url(#painGradGreen)"/><rect x="6" y="6" width="52" height="22" rx="14" fill="url(#painSheen)" opacity="0.4"/><rect x="14" y="22" width="36" height="22" rx="4" fill="#fff"/><rect x="14" y="22" width="36" height="6" rx="3" fill="#cdebd7"/><circle cx="32" cy="34" r="6" fill="none" stroke="#1fa463" stroke-width="2"/><path d="M32 30v8M30 32h4M30 36h4" stroke="#1fa463" stroke-width="1.6" stroke-linecap="round"/></svg>
+                </span>
+                <span class="pain-launcher-label">Receita parada</span>
+                <span class="pain-launcher-cta">Toque para ver</span>
+              </button>
+              <div class="pain-reveal" data-pain-reveal hidden>
+                <span class="pain-reveal-icon pain-icon-3d pain-icon-green" aria-hidden="true">
+                  <svg viewBox="0 0 64 64"><rect x="6" y="6" width="52" height="52" rx="14" fill="url(#painGradGreen)"/><rect x="6" y="6" width="52" height="22" rx="14" fill="url(#painSheen)" opacity="0.4"/><rect x="14" y="22" width="36" height="22" rx="4" fill="#fff"/><circle cx="32" cy="34" r="6" fill="none" stroke="#1fa463" stroke-width="2"/><path d="M32 30v8M30 32h4M30 36h4" stroke="#1fa463" stroke-width="1.6" stroke-linecap="round"/></svg>
+                </span>
+                <span class="pain-chip">Como você perde receita</span>
+                <h3>Oportunidades somem</h3>
+                <p>Sem base unificada, pacientes somem sem alerta e oportunidades ficam paradas.</p>
+                <button class="pain-next" type="button" data-pain-next data-pain-last aria-label="Concluir">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5 10 17 19 7.5"></path></svg>
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <div class="pain-dots" data-pain-dots role="tablist" aria-label="Navegar entre os problemas">
+            <button class="pain-dot is-active" type="button" data-pain-goto="0" aria-label="Problema 1: Tempo perdido"></button>
+            <button class="pain-dot" type="button" data-pain-goto="1" aria-label="Problema 2: Noite ocupada"></button>
+            <button class="pain-dot" type="button" data-pain-goto="2" aria-label="Problema 3: Imagem frágil"></button>
+            <button class="pain-dot" type="button" data-pain-goto="3" aria-label="Problema 4: Receita parada"></button>
           </div>
         </div>
 
@@ -175,73 +236,119 @@
         <h2 class="slide-title">Veja como resolvemos os problemas</h2>
 
         <div class="solution-stage" data-solution-stage>
-          <div class="solution-switcher" role="tablist" aria-label="Frentes da plataforma">
-            <button class="solution-tab is-active" type="button" role="tab" aria-selected="true" data-solution-label="Agenda inteligente" data-solution-problem="Você perdia tempo confirmando consulta por mensagem e ainda levava faltas semanais." data-solution-action="A agenda envia lembretes, confirma presença e reorganiza sua rotina sem depender de WhatsApp manual." data-solution-result="Sua agenda para de vazar receita e o paciente chega mais preparado para a consulta.">
-              <span class="solution-tab-kicker">Faltas e atrasos</span>
-              <strong>Agenda inteligente</strong>
-            </button>
-            <button class="solution-tab" type="button" role="tab" aria-selected="false" data-solution-label="Prontuário com IA" data-solution-problem="Seu dia acabava e o trabalho continuava de noite, com evolução atrasada e energia no fim." data-solution-action="A IA estrutura o prontuário a partir do atendimento e deixa para você apenas revisar e finalizar." data-solution-result="Você encerra a consulta com registro pronto, ganha tempo e reduz o peso operacional depois do expediente.">
-              <span class="solution-tab-kicker">Noite ocupada</span>
-              <strong>Prontuário com IA</strong>
-            </button>
-            <button class="solution-tab" type="button" role="tab" aria-selected="false" data-solution-label="Telemedicina profissional" data-solution-problem="Atender por chamada comum enfraquecia sua imagem e dificultava sustentar uma cobrança premium." data-solution-action="A sala profissional concentra chamada segura, prescrição digital e fluxo de pagamento no mesmo atendimento." data-solution-result="Sua consulta online passa mais autoridade, melhora a experiência do paciente e sustenta valor percebido.">
-              <span class="solution-tab-kicker">Imagem profissional</span>
-              <strong>Telemedicina profissional</strong>
-            </button>
-            <button class="solution-tab" type="button" role="tab" aria-selected="false" data-solution-label="Base única e reativação" data-solution-problem="Sem base centralizada, pacientes sumiam sem alerta e oportunidades de retorno morriam no esquecimento." data-solution-action="A plataforma centraliza histórico, sinaliza pacientes inativos e dispara ações de retorno no momento certo." data-solution-result="Você volta a ter previsibilidade de receita e reaproveita pacientes que já confiaram no seu trabalho.">
-              <span class="solution-tab-kicker">Receita parada</span>
-              <strong>Base única e reativação</strong>
-            </button>
+          <div class="solution-accordion" role="list">
+            <section class="solution-item" data-solution-item role="listitem">
+              <button class="solution-tab" type="button" data-solution-toggle aria-expanded="false">
+                <span class="solution-tab-copy">
+                  <span class="solution-tab-kicker">Faltas e atrasos</span>
+                  <strong>Agenda inteligente</strong>
+                </span>
+                <span class="solution-tab-chevron" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </span>
+              </button>
+              <div class="solution-body" data-solution-body>
+                <div class="solution-body-inner">
+                  <div class="solution-row">
+                    <span class="solution-row-eyebrow">Antes</span>
+                    <p>Você perdia tempo confirmando consulta por mensagem e ainda levava faltas semanais.</p>
+                  </div>
+                  <div class="solution-row">
+                    <span class="solution-row-eyebrow">Como resolve</span>
+                    <p>A agenda envia lembretes, confirma presença e reorganiza sua rotina sem depender de WhatsApp manual.</p>
+                  </div>
+                  <div class="solution-row">
+                    <span class="solution-row-eyebrow">Ganho direto</span>
+                    <p>Sua agenda para de vazar receita e o paciente chega mais preparado para a consulta.</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="solution-item" data-solution-item role="listitem">
+              <button class="solution-tab" type="button" data-solution-toggle aria-expanded="false">
+                <span class="solution-tab-copy">
+                  <span class="solution-tab-kicker">Noite ocupada</span>
+                  <strong>Prontuário com IA</strong>
+                </span>
+                <span class="solution-tab-chevron" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </span>
+              </button>
+              <div class="solution-body" data-solution-body>
+                <div class="solution-body-inner">
+                  <div class="solution-row">
+                    <span class="solution-row-eyebrow">Antes</span>
+                    <p>Seu dia acabava e o trabalho continuava de noite, com evolução atrasada e energia no fim.</p>
+                  </div>
+                  <div class="solution-row">
+                    <span class="solution-row-eyebrow">Como resolve</span>
+                    <p>A IA estrutura o prontuário a partir do atendimento e deixa para você apenas revisar e finalizar.</p>
+                  </div>
+                  <div class="solution-row">
+                    <span class="solution-row-eyebrow">Ganho direto</span>
+                    <p>Você encerra a consulta com registro pronto, ganha tempo e reduz o peso operacional depois do expediente.</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="solution-item" data-solution-item role="listitem">
+              <button class="solution-tab" type="button" data-solution-toggle aria-expanded="false">
+                <span class="solution-tab-copy">
+                  <span class="solution-tab-kicker">Imagem profissional</span>
+                  <strong>Telemedicina profissional</strong>
+                </span>
+                <span class="solution-tab-chevron" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </span>
+              </button>
+              <div class="solution-body" data-solution-body>
+                <div class="solution-body-inner">
+                  <div class="solution-row">
+                    <span class="solution-row-eyebrow">Antes</span>
+                    <p>Atender por chamada comum enfraquecia sua imagem e dificultava sustentar uma cobrança premium.</p>
+                  </div>
+                  <div class="solution-row">
+                    <span class="solution-row-eyebrow">Como resolve</span>
+                    <p>A sala profissional concentra chamada segura, prescrição digital e fluxo de pagamento no mesmo atendimento.</p>
+                  </div>
+                  <div class="solution-row">
+                    <span class="solution-row-eyebrow">Ganho direto</span>
+                    <p>Sua consulta online passa mais autoridade, melhora a experiência do paciente e sustenta valor percebido.</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="solution-item" data-solution-item role="listitem">
+              <button class="solution-tab" type="button" data-solution-toggle aria-expanded="false">
+                <span class="solution-tab-copy">
+                  <span class="solution-tab-kicker">Receita parada</span>
+                  <strong>Base única e reativação</strong>
+                </span>
+                <span class="solution-tab-chevron" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </span>
+              </button>
+              <div class="solution-body" data-solution-body>
+                <div class="solution-body-inner">
+                  <div class="solution-row">
+                    <span class="solution-row-eyebrow">Antes</span>
+                    <p>Sem base centralizada, pacientes sumiam sem alerta e oportunidades de retorno morriam no esquecimento.</p>
+                  </div>
+                  <div class="solution-row">
+                    <span class="solution-row-eyebrow">Como resolve</span>
+                    <p>A plataforma centraliza histórico, sinaliza pacientes inativos e dispara ações de retorno no momento certo.</p>
+                  </div>
+                  <div class="solution-row">
+                    <span class="solution-row-eyebrow">Ganho direto</span>
+                    <p>Você volta a ter previsibilidade de receita e reaproveita pacientes que já confiaram no seu trabalho.</p>
+                  </div>
+                </div>
+              </div>
+            </section>
           </div>
-
-          <article class="solution-focus is-hidden" aria-live="polite" aria-hidden="true">
-            <div class="solution-focus-head">
-              <span class="solution-focus-tag">Resposta operacional</span>
-              <h3 data-solution-label>Agenda inteligente</h3>
-              <p>Da dor operacional para uma rotina mais previsível, sem improviso.</p>
-            </div>
-
-            <div class="solution-story-grid">
-              <section class="solution-story-card problem is-open" data-story-card>
-                <button class="solution-story-toggle" type="button" data-story-toggle aria-expanded="true">
-                  <span>
-                    <span class="solution-story-eyebrow">Antes</span>
-                    <strong>O problema</strong>
-                  </span>
-                  <span class="solution-story-icon" aria-hidden="true">+</span>
-                </button>
-                <div class="solution-story-body" data-story-body>
-                  <p data-solution-problem>Você perdia tempo confirmando consulta por mensagem e ainda levava faltas semanais.</p>
-                </div>
-              </section>
-
-              <section class="solution-story-card action" data-story-card>
-                <button class="solution-story-toggle" type="button" data-story-toggle aria-expanded="false">
-                  <span>
-                    <span class="solution-story-eyebrow">Durante</span>
-                    <strong>Como resolve</strong>
-                  </span>
-                  <span class="solution-story-icon" aria-hidden="true">+</span>
-                </button>
-                <div class="solution-story-body" data-story-body>
-                  <p data-solution-action>A agenda envia lembretes, confirma presença e reorganiza sua rotina sem depender de WhatsApp manual.</p>
-                </div>
-              </section>
-
-              <section class="solution-story-card result" data-story-card>
-                <button class="solution-story-toggle" type="button" data-story-toggle aria-expanded="false">
-                  <span>
-                    <span class="solution-story-eyebrow">Depois</span>
-                    <strong>O ganho direto</strong>
-                  </span>
-                  <span class="solution-story-icon" aria-hidden="true">+</span>
-                </button>
-                <div class="solution-story-body" data-story-body>
-                  <p data-solution-result>Sua agenda para de vazar receita e o paciente chega mais preparado para a consulta.</p>
-                </div>
-              </section>
-            </div>
-          </article>
         </div>
 
         <div class="slide-nav">
@@ -694,106 +801,114 @@
         var lab = document.querySelector('[data-pain-lab]');
         if (!lab) return;
 
-        var cards = Array.prototype.slice.call(lab.querySelectorAll('.pain-card'));
+        var steps = Array.prototype.slice.call(lab.querySelectorAll('.pain-step'));
+        var dots = Array.prototype.slice.call(lab.querySelectorAll('.pain-dot'));
+        var hint = document.querySelector('[data-pain-hint]');
+        if (!steps.length) return;
 
-        cards.forEach(function (card) {
-          card.addEventListener('click', function () {
-            var isFlipped = card.classList.contains('is-flipped');
+        function showStep(index, opts) {
+          opts = opts || {};
+          steps.forEach(function (step, i) {
+            var match = i === index;
+            step.classList.toggle('is-active', match);
+            if (!match) {
+              var reveal = step.querySelector('[data-pain-reveal]');
+              if (reveal) {
+                reveal.hidden = true;
+                step.classList.remove('is-revealed');
+              }
+            }
+          });
+          dots.forEach(function (dot, i) {
+            dot.classList.toggle('is-active', i === index);
+            dot.classList.toggle('is-done', i < index);
+          });
+          if (opts.openReveal) {
+            var current = steps[index];
+            var rv = current.querySelector('[data-pain-reveal]');
+            if (rv) {
+              rv.hidden = false;
+              current.classList.add('is-revealed');
+            }
+          }
+          if (hint) hint.classList.toggle('is-dim', index > 0 || opts.openReveal);
+        }
 
-            cards.forEach(function (item) {
-              item.classList.remove('is-flipped');
-              item.setAttribute('aria-pressed', 'false');
+        steps.forEach(function (step, index) {
+          var launcher = step.querySelector('[data-pain-open]');
+          var reveal = step.querySelector('[data-pain-reveal]');
+          var nextBtn = step.querySelector('[data-pain-next]');
+
+          if (launcher) {
+            launcher.addEventListener('click', function () {
+              if (!reveal) return;
+              reveal.hidden = false;
+              step.classList.add('is-revealed');
+              if (hint) hint.classList.add('is-dim');
             });
+          }
 
-            if (!isFlipped) {
-              card.classList.add('is-flipped');
-              card.setAttribute('aria-pressed', 'true');
+          if (nextBtn) {
+            nextBtn.addEventListener('click', function (e) {
+              e.stopPropagation();
+              var nextIndex = index + 1;
+              if (nextIndex >= steps.length) {
+                step.classList.add('is-done');
+                return;
+              }
+              showStep(nextIndex);
+              var nextLauncher = steps[nextIndex].querySelector('[data-pain-open]');
+              if (nextLauncher) nextLauncher.focus();
+            });
+          }
+        });
+
+        dots.forEach(function (dot, i) {
+          dot.addEventListener('click', function () {
+            showStep(i);
+          });
+          dot.addEventListener('keydown', function (e) {
+            if (e.key === 'ArrowRight') {
+              e.preventDefault();
+              showStep(Math.min(steps.length - 1, i + 1));
+              dots[Math.min(dots.length - 1, i + 1)].focus();
+            } else if (e.key === 'ArrowLeft') {
+              e.preventDefault();
+              showStep(Math.max(0, i - 1));
+              dots[Math.max(0, i - 1)].focus();
             }
           });
         });
+
+        showStep(0);
       }
 
       function initSolutionStage() {
         var stage = document.querySelector('[data-solution-stage]');
         if (!stage) return;
 
-        var tabs = Array.prototype.slice.call(stage.querySelectorAll('.solution-tab'));
-        var focus = stage.querySelector('.solution-focus');
-        var label = focus ? focus.querySelector('[data-solution-label]') : null;
-        var problem = focus ? focus.querySelector('[data-solution-problem]') : null;
-        var action = focus ? focus.querySelector('[data-solution-action]') : null;
-        var result = focus ? focus.querySelector('[data-solution-result]') : null;
-        var storyCards = focus ? Array.prototype.slice.call(focus.querySelectorAll('[data-story-card]')) : [];
+        var items = Array.prototype.slice.call(stage.querySelectorAll('[data-solution-item]'));
+        if (!items.length) return;
 
-        function openStoryCard(targetCard) {
-          storyCards.forEach(function (card) {
-            var isOpen = card === targetCard;
-            card.classList.toggle('is-open', isOpen);
+        function setOpen(target) {
+          items.forEach(function (item) {
+            var isOpen = item === target;
+            item.classList.toggle('is-open', isOpen);
+            var toggle = item.querySelector('[data-solution-toggle]');
+            if (toggle) toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+          });
+        }
 
-            var toggle = card.querySelector('[data-story-toggle]');
-            if (toggle) {
-              toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        items.forEach(function (item) {
+          var toggle = item.querySelector('[data-solution-toggle]');
+          if (!toggle) return;
+          toggle.addEventListener('click', function () {
+            if (item.classList.contains('is-open')) {
+              setOpen(null);
+            } else {
+              setOpen(item);
             }
           });
-        }
-
-        function activate(tab) {
-          if (focus) {
-            focus.classList.remove('is-hidden');
-            focus.setAttribute('aria-hidden', 'false');
-          }
-
-          tabs.forEach(function (item) {
-            var active = item === tab;
-            item.classList.toggle('is-active', active);
-            item.setAttribute('aria-selected', active ? 'true' : 'false');
-          });
-
-          if (label) label.textContent = tab.dataset.solutionLabel || '';
-          if (problem) problem.textContent = tab.dataset.solutionProblem || '';
-          if (action) action.textContent = tab.dataset.solutionAction || '';
-          if (result) result.textContent = tab.dataset.solutionResult || '';
-
-          if (storyCards.length) {
-            openStoryCard(storyCards[0]);
-          }
-
-          if (focus) {
-            focus.classList.remove('is-switching');
-            void focus.offsetWidth;
-            focus.classList.add('is-switching');
-            window.setTimeout(function () {
-              focus.classList.remove('is-switching');
-            }, 380);
-          }
-        }
-
-        tabs.forEach(function (tab) {
-          tab.addEventListener('click', function () {
-            activate(tab);
-          });
-        });
-
-        storyCards.forEach(function (card) {
-          var toggle = card.querySelector('[data-story-toggle]');
-          if (!toggle) return;
-
-          toggle.addEventListener('click', function () {
-            openStoryCard(card);
-          });
-        });
-
-        tabs.forEach(function (tab) {
-          tab.classList.remove('is-active');
-          tab.setAttribute('aria-selected', 'false');
-        });
-
-        storyCards.forEach(function (card) {
-          card.classList.remove('is-open');
-          var toggle = card.querySelector('[data-story-toggle]');
-          if (toggle) {
-            toggle.setAttribute('aria-expanded', 'false');
-          }
         });
       }
 
