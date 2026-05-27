@@ -1152,6 +1152,10 @@ select:focus {
   max-width: 760px;
 }
 
+.pink-highlight {
+  color: #ff6ef9;
+}
+
 .wizard .slide-lead {
   color: #d7cde6;
 }
@@ -2390,7 +2394,7 @@ select:focus {
 }
 
 .slide[data-slide="5"] .urgency-clock {
-  margin-top: clamp(52px, 8vh, 86px);
+  margin-top: 10px;
   width: min(760px, 100%);
   gap: 14px;
   padding: clamp(30px, 5vw, 48px);
@@ -3137,10 +3141,202 @@ body {
 
 .slide[data-slide="5"] .urgency-clock {
   width: min(820px, 100%);
+  margin-top: 24px;
   padding: clamp(34px, 6vw, 56px) clamp(18px, 5vw, 44px);
 }
 
 .slide[data-slide="5"] .urgency-clock strong {
   font-size: clamp(84px, 20vw, 190px);
   line-height: 0.86;
+}
+
+.slide[data-slide="3"] .step3-image {
+  box-sizing: border-box;
+  width: min(390px, 100%);
+  max-width: 100%;
+  aspect-ratio: 9 / 16;
+  margin: 22px auto 0;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 110, 249, 0.28);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 24px 70px rgba(143, 43, 211, 0.28);
+}
+
+.slide[data-slide="3"] .step3-image img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.coupon-callout {
+  width: min(820px, 100%);
+  margin: 0 auto;
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+  padding: 18px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(143, 43, 211, 0.24), rgba(255, 110, 249, 0.16));
+  border: 1px solid rgba(255, 110, 249, 0.34);
+  border-radius: 20px;
+  box-shadow: 0 18px 50px rgba(143, 43, 211, 0.26);
+}
+
+.coupon-callout span {
+  color: #f6ddff;
+  font-size: clamp(13px, 2vw, 17px);
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.coupon-callout strong {
+  color: #fff;
+  font-size: clamp(30px, 6vw, 58px);
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.plan-grid {
+  margin: 24px auto 0;
+  width: min(820px, 100%);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.plan-card {
+  display: grid;
+  gap: 8px;
+  padding: 18px 16px;
+  text-align: center;
+  background: linear-gradient(160deg, rgba(255, 110, 249, 0.13), rgba(143, 43, 211, 0.18));
+  border: 1px solid rgba(255, 110, 249, 0.26);
+  border-radius: 18px;
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.20);
+}
+
+.plan-card span {
+  color: #f6ddff;
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.plan-card strong {
+  color: #fff;
+  font-size: clamp(24px, 3.6vw, 38px);
+  line-height: 1;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+.plan-card s {
+  color: #cbb8da;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.coupon-apply {
+  width: min(820px, 100%);
+  margin: 14px auto 0;
+  display: grid;
+  gap: 8px;
+}
+
+.coupon-apply label {
+  color: #f6ddff;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.coupon-field {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 110, 249, 0.28);
+  border-radius: 16px;
+}
+
+.coupon-field input {
+  min-width: 0;
+  color: #fff;
+  background: rgba(10, 3, 20, 0.48);
+  border-color: rgba(255, 110, 249, 0.28);
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.coupon-field span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 42px;
+  padding: 0 14px;
+  color: #fff;
+  background: linear-gradient(135deg, #8f2bd3, #ff6ef9);
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+@media (max-width: 720px) {
+  .slide[data-slide="3"] .step3-image {
+    width: min(300px, 100%);
+    margin-top: 18px;
+    border-radius: 18px;
+  }
+
+  .plan-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .plan-card {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: end;
+    text-align: left;
+    gap: 6px 12px;
+    padding: 16px 18px;
+  }
+
+  .plan-card span {
+    grid-column: 1 / -1;
+    font-size: 13px;
+    line-height: 1.1;
+    overflow-wrap: anywhere;
+  }
+
+  .plan-card s {
+    grid-column: 1;
+    align-self: center;
+    font-size: clamp(14px, 4.2vw, 17px);
+    line-height: 1.1;
+  }
+
+  .plan-card strong {
+    grid-column: 2;
+    align-self: center;
+    white-space: nowrap;
+    font-size: clamp(30px, 9vw, 40px);
+    line-height: 0.98;
+  }
+
+  .coupon-field {
+    grid-template-columns: 1fr;
+  }
+
+  .coupon-field span {
+    justify-content: center;
+  }
 }
