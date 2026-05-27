@@ -3211,6 +3211,7 @@ body {
 }
 
 .plan-card {
+  appearance: none;
   display: grid;
   gap: 8px;
   padding: 18px 16px;
@@ -3219,9 +3220,27 @@ body {
   border: 1px solid rgba(255, 110, 249, 0.26);
   border-radius: 18px;
   box-shadow: 0 18px 42px rgba(0, 0, 0, 0.20);
+  cursor: pointer;
+  font: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 
-.plan-card span {
+.plan-card:hover,
+.plan-card:focus-visible {
+  border-color: rgba(255, 110, 249, 0.62);
+  box-shadow: 0 22px 54px rgba(255, 110, 249, 0.22);
+  outline: none;
+  transform: translateY(-1px);
+}
+
+.plan-card.is-selected {
+  border-color: #ff6ef9;
+  box-shadow:
+    0 0 0 2px rgba(255, 110, 249, 0.22),
+    0 24px 62px rgba(255, 110, 249, 0.28);
+}
+
+.plan-card > span:first-child {
   color: #f6ddff;
   font-size: 13px;
   font-weight: 800;
@@ -3240,6 +3259,65 @@ body {
   color: #cbb8da;
   font-size: 14px;
   font-weight: 700;
+}
+
+.plan-details {
+  display: grid;
+  max-height: 0;
+  overflow: hidden;
+  gap: 8px;
+  opacity: 0;
+  text-align: left;
+  text-transform: none;
+  transition: max-height 0.24s ease, opacity 0.2s ease, margin-top 0.2s ease;
+}
+
+.plan-card.is-selected .plan-details {
+  max-height: 260px;
+  margin-top: 6px;
+  opacity: 1;
+}
+
+.plan-description {
+  color: #f3e6ff;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.35;
+  text-transform: none;
+}
+
+.plan-feature {
+  display: grid;
+  grid-template-columns: 22px 1fr;
+  gap: 8px;
+  color: #f6ddff;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.25;
+  text-align: left;
+  text-transform: none;
+}
+
+.plan-feature::before {
+  content: "OK";
+  width: 22px;
+  height: 22px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #34ff8e, #1f9b57);
+  color: #0a2417;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.plan-error {
+  min-height: 20px;
+  margin: 10px auto 0;
+  color: #ff9ee9;
+  font-size: 14px;
+  font-weight: 800;
+  text-align: center;
 }
 
 .coupon-apply {
@@ -3310,11 +3388,15 @@ body {
     padding: 16px 18px;
   }
 
-  .plan-card span {
+  .plan-card > span:first-child {
     grid-column: 1 / -1;
     font-size: 13px;
     line-height: 1.1;
     overflow-wrap: anywhere;
+  }
+
+  .plan-details {
+    grid-column: 1 / -1;
   }
 
   .plan-card s {

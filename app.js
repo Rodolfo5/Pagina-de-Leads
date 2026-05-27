@@ -75,7 +75,7 @@ function initOnboarding() {
     }
 
     setLead(payload);
-    window.location.href = "./consultorio-digital.html";
+    window.location.href = "./criar-login.html";
   });
 }
 
@@ -149,7 +149,7 @@ function initCheckout() {
       pagamento: "cartao",
     });
 
-    window.location.href = "https://consultorio.upsaudeapp.com/login";
+    window.location.href = "./onboarding.html";
   });
 }
 
