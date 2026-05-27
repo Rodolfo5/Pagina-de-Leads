@@ -88,7 +88,7 @@
         <p class="slide-lead">Faça consultas onlines ilimitadas, cobre o valor que achar melhor e tenha uma secretária digital para agendar, cobrar e fidelizar os seus pacientes.</p>
 
         <figure class="step3-image">
-          <img src="/plantao-digital-upsaude.png" alt="Plantão digital da UpSaúde" width="320" height="569" loading="lazy" />
+          <img src="./public/plantao-digital-upsaude.png" alt="Plantão digital da UpSaúde" width="320" height="569" loading="lazy" />
         </figure>
 
         <div class="slide-nav">
@@ -365,7 +365,7 @@
 
         <article class="testimonial-card">
           <img
-            src="/themis-sarmento-depoimento.webp"
+            src="./public/themis-sarmento-depoimento.webp"
             alt="Dra. Themis Sarmento"
             class="testimonial-photo"
             loading="lazy"
@@ -697,12 +697,11 @@
           return true;
         }
 
-        var msg = document.getElementById('planMsg');
-        if (msg) msg.textContent = 'Escolha um plano para continuar.';
-
         var firstPlan = document.querySelector('.plan-card');
-        if (firstPlan) firstPlan.focus();
-        return false;
+        if (!firstPlan) return false;
+
+        selectPlan(firstPlan);
+        return true;
       }
 
       function syncLeadName() {
