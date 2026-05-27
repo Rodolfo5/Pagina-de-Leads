@@ -8,10 +8,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./styles.css?v=20260527" />
   <style>
     .text-back {
-      width: 34px;
+      width: 44px;
       height: 44px;
       display: inline-grid;
       place-items: center;
@@ -19,14 +19,23 @@
       border: 0;
       border-radius: 0;
       color: #f8f3ff;
-      font-weight: 700;
-      font-size: 30px;
       line-height: 1;
-      padding: 0 0 4px;
+      padding: 0;
       cursor: pointer;
       text-decoration: none;
       box-shadow: none;
       transition: transform .22s ease, color .22s ease;
+    }
+
+    .back-chevron {
+      width: 15px;
+      height: 15px;
+      display: block;
+      border-left: 3px solid currentColor;
+      border-bottom: 3px solid currentColor;
+      border-radius: 1px;
+      transform: rotate(45deg);
+      margin-left: 6px;
     }
 
     .text-back:hover {
@@ -76,26 +85,14 @@
 
     <div class="wizard" id="wizard">
       <section class="slide" data-slide="3">
-        <span class="chip chip-glow"><span class="chip-dot"></span> Pré-lançamento aberto · vagas limitadas</span>
-        <h1 class="slide-title">Dobre seus atendimentos de forma <span class="grad-text">profissional e automatizada</span>.</h1>
-        <p class="slide-lead">Agenda, prontuário com IA e teleconsulta em um único ecossistema para médicos, psicólogos, nutricionistas, fisioterapeutas, odontólogos e educadores físicos.</p>
+        <h1 class="slide-title">Tenha seu próprio consultório online e faça sua renda sem sair de casa.</h1>
 
-        <ul class="hero-checks">
-          <li>Cadastro em menos de 2 minutos</li>
-          <li>7 dias de garantia incondicional</li>
-          <li>Bônus exclusivo de pré-lançamento</li>
-        </ul>
-
-        <div class="hero-stat">
-          <strong>+128%</strong>
-          <span>de aumento nos atendimentos nos 3 primeiros meses</span>
-        </div>
+        <p class="slide-lead">Faça consultas onlines ilimitadas, cobre o valor que achar melhor e tenha uma secretária digital para agendar, cobrar e fidelizar os seus pacientes.</p>
 
         <div class="slide-nav">
-          <button class="text-back" type="button" data-prev aria-label="Voltar">&lt;</button>
+          <button class="text-back" type="button" data-prev aria-label="Voltar"><span class="back-chevron" aria-hidden="true"></span></button>
           <button class="btn btn-primary btn-lg btn-pulse" type="button" data-next>
             Quero aproveitar essa oportunidade
-            <span class="btn-arrow">&rarr;</span>
           </button>
         </div>
       </section>
@@ -165,10 +162,9 @@
         </div>
 
         <div class="slide-nav">
-          <button class="text-back" type="button" data-prev aria-label="Voltar">&lt;</button>
+          <button class="text-back" type="button" data-prev aria-label="Voltar"><span class="back-chevron" aria-hidden="true"></span></button>
           <button class="btn btn-primary btn-lg btn-pulse" type="button" data-next>
             Quero resolver isso agora
-            <span class="btn-arrow">&rarr;</span>
           </button>
         </div>
       </section>
@@ -196,7 +192,7 @@
             </button>
           </div>
 
-          <article class="solution-focus" aria-live="polite">
+          <article class="solution-focus is-hidden" aria-live="polite" aria-hidden="true">
             <div class="solution-focus-head">
               <span class="solution-focus-tag">Resposta operacional</span>
               <h3 data-solution-label>Agenda inteligente</h3>
@@ -247,10 +243,9 @@
         </div>
 
         <div class="slide-nav">
-          <button class="text-back" type="button" data-prev aria-label="Voltar">&lt;</button>
+          <button class="text-back" type="button" data-prev aria-label="Voltar"><span class="back-chevron" aria-hidden="true"></span></button>
           <button class="btn btn-primary btn-lg btn-pulse" type="button" data-next>
             Quero ver como a plataforma funciona
-            <span class="btn-arrow">&rarr;</span>
           </button>
         </div>
       </section>
@@ -258,76 +253,45 @@
       <section class="slide" data-slide="4">
         <p class="kicker">QUEM JÁ USA, RECOMENDA</p>
         <h2 class="slide-title">Dra. Themis Sarmento conta o que mudou na prática clínica dela.</h2>
-        <p class="slide-lead">A história de quem saiu do improviso e passou a operar com método.</p>
 
-        <div class="video-wrap">
-          <div class="video-frame">
-            <iframe
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0&modestbranding=1"
-              title="Depoimento da Dra. Themis Sarmento"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-              loading="lazy"
-            ></iframe>
-          </div>
-          <figcaption class="video-caption">
-            <div class="vc-avatar" aria-hidden="true">TS</div>
-            <div>
+        <article class="testimonial-card">
+          <img
+            src="/themis-sarmento-depoimento.webp"
+            alt="Dra. Themis Sarmento"
+            class="testimonial-photo"
+            loading="lazy"
+          />
+          <div class="testimonial-copy">
+            <p class="testimonial-label">Depoimento</p>
+            <blockquote>
+              "Com o UpSaúde, minha rotina clínica ficou mais organizada: consigo atender online, acompanhar os pacientes com mais proximidade e deixar agendamentos, cobranças e lembretes em uma operação muito mais profissional."
+            </blockquote>
+            <div class="testimonial-author">
               <strong>Dra. Themis Sarmento</strong>
-              <span>Médica · usa o UpSaúde no consultório</span>
+              <span>Médica · consultório digital com UpSaúde</span>
             </div>
-            <div class="vc-stars" aria-label="5 estrelas">5/5</div>
-          </figcaption>
-        </div>
+          </div>
+        </article>
 
         <div class="slide-nav">
-          <button class="text-back" type="button" data-prev aria-label="Voltar">&lt;</button>
+          <button class="text-back" type="button" data-prev aria-label="Voltar"><span class="back-chevron" aria-hidden="true"></span></button>
           <button class="btn btn-primary btn-lg btn-pulse" type="button" data-next>
             Quero esse resultado no meu consultório
-            <span class="btn-arrow">&rarr;</span>
           </button>
         </div>
       </section>
 
       <section class="slide" data-slide="5">
-        <p class="kicker">SUA VAGA NO PRÉ-LANÇAMENTO</p>
-        <h2 class="slide-title">Tudo isso por menos de R$ 2,50 por dia.</h2>
-
-        <div class="offer-card compact">
-          <div class="offer-left">
-            <span class="offer-flag">25% OFF · pré-lançamento</span>
-            <ul class="offer-includes">
-              <li><span>OK</span> Acesso completo ao consultório digital</li>
-              <li><span>OK</span> Prontuário com IA ilimitado</li>
-              <li><span>OK</span> Telemedicina profissional segura</li>
-              <li><span>OK</span> Base única de pacientes + reativação</li>
-              <li><span>OK</span> Suporte humano por WhatsApp</li>
-            </ul>
-            <div class="bonus-stack">
-              <div class="bonus-tag">BÔNUS EXCLUSIVO</div>
-              <strong>E-book: Como usar o consultório digital para dobrar seu número de pacientes</strong>
-              <span>Liberado imediatamente após sua confirmação.</span>
-            </div>
-          </div>
-          <aside class="offer-right">
-            <div class="price-block">
-              <span class="price-from">De <s>R$ 97,00</s>/mês</span>
-              <div class="price-main"><span class="price-currency">R$</span><span class="price-value">72,75</span><span class="price-period">/mês</span></div>
-              <span class="price-note">ou 3x de R$ 24,25 no cartão</span>
-            </div>
-            <div class="guarantee">
-              <div class="guarantee-seal">7<span>dias</span></div>
-              <div><strong>Garantia incondicional</strong><span>Não gostou? Devolvemos 100%.</span></div>
-            </div>
-          </aside>
+        <div class="urgency-clock" role="timer" aria-live="polite">
+          <span class="urgency-clock-label">Sua condição especial expira em</span>
+          <strong class="js-timer">15:00</strong>
+          <span class="urgency-clock-note">Depois disso, o valor promocional pode sair do ar.</span>
         </div>
 
         <div class="slide-nav">
-          <button class="text-back" type="button" data-prev aria-label="Voltar">&lt;</button>
+          <button class="text-back" type="button" data-prev aria-label="Voltar"><span class="back-chevron" aria-hidden="true"></span></button>
           <button class="btn btn-primary btn-lg btn-pulse" type="button" data-next>
             Quero garantir minha condição especial
-            <span class="btn-arrow">&rarr;</span>
           </button>
         </div>
       </section>
@@ -363,10 +327,9 @@
         </form>
 
         <div class="slide-nav">
-          <button class="text-back" type="button" data-prev aria-label="Voltar">&lt;</button>
+          <button class="text-back" type="button" data-prev aria-label="Voltar"><span class="back-chevron" aria-hidden="true"></span></button>
           <button class="btn btn-primary btn-lg btn-pulse" type="button" id="step6Next">
             Quero liberar meu acesso
-            <span class="btn-arrow">&rarr;</span>
           </button>
         </div>
       </section>
@@ -376,7 +339,7 @@
         <h2 class="slide-title">Tudo certo, <strong data-lead="nome">profissional</strong>. Confira o resumo antes de pagar.</h2>
         <p class="slide-lead">Próximo passo é o pagamento seguro. Em seguida, seu acesso ao consultório digital é liberado imediatamente.</p>
 
-        <span class="timer">Reserva ativa por <strong class="js-timer">12:00</strong></span>
+        <span class="timer">Reserva ativa por <strong class="js-timer">15:00</strong></span>
 
         <div class="confirm-summary">
           <h3 class="confirm-h">Resumo da sua vaga</h3>
@@ -398,10 +361,9 @@
         </div>
 
         <div class="slide-nav">
-          <button class="text-back" type="button" data-prev aria-label="Voltar">&lt;</button>
+          <button class="text-back" type="button" data-prev aria-label="Voltar"><span class="back-chevron" aria-hidden="true"></span></button>
           <button class="btn btn-primary btn-lg btn-pulse" type="button" data-next>
             Quero ativar minha vaga agora
-            <span class="btn-arrow">&rarr;</span>
           </button>
         </div>
       </section>
@@ -411,7 +373,7 @@
         <h2 class="slide-title"><strong data-lead="nome">Profissional</strong>, sua vaga está reservada por tempo limitado.</h2>
         <p class="slide-lead">Finalize com cartão para ativar o acesso imediato e desbloquear seu bônus.</p>
 
-        <span class="timer">Oferta com 25% OFF encerra em <strong class="js-timer">12:00</strong></span>
+        <span class="timer">Oferta com 25% OFF encerra em <strong class="js-timer">15:00</strong></span>
 
         <div class="checkout-grid">
           <form class="checkout-box form-grid" id="checkoutForm" novalidate>
@@ -448,7 +410,7 @@
 
             <p class="error-text" id="checkoutMsg"></p>
 
-            <button class="btn btn-primary btn-lg btn-pulse" type="submit">Ativar meu acesso agora <span class="btn-arrow">&rarr;</span></button>
+            <button class="btn btn-primary btn-lg btn-pulse" type="submit">Ativar meu acesso agora</button>
           </form>
 
           <aside class="summary-box">
@@ -460,7 +422,7 @@
         </div>
 
         <div class="slide-nav">
-          <button class="text-back" type="button" data-prev aria-label="Voltar">&lt;</button>
+          <button class="text-back" type="button" data-prev aria-label="Voltar"><span class="back-chevron" aria-hidden="true"></span></button>
         </div>
       </section>
     </div>
@@ -477,7 +439,7 @@
       var current = 1;
       var initialHash = window.location.hash.match(/^#step-(\d+)$/);
       var leadKey = 'upsaudeLead';
-      var timerKey = 'upsaudeOfferDeadline';
+      var timerKey = 'upsaudeOfferDeadline15';
 
       function go(n) {
         n = Math.max(1, Math.min(total, n));
@@ -697,7 +659,7 @@
         var raw = localStorage.getItem(timerKey);
         var value = raw ? Number(raw) : 0;
         if (!value || Number.isNaN(value) || value < Date.now()) {
-          value = Date.now() + 12 * 60 * 1000;
+          value = Date.now() + 15 * 60 * 1000;
           localStorage.setItem(timerKey, String(value));
         }
         return value;
@@ -762,6 +724,11 @@
         }
 
         function activate(tab) {
+          if (focus) {
+            focus.classList.remove('is-hidden');
+            focus.setAttribute('aria-hidden', 'false');
+          }
+
           tabs.forEach(function (item) {
             var active = item === tab;
             item.classList.toggle('is-active', active);
@@ -802,9 +769,18 @@
           });
         });
 
-        if (storyCards.length) {
-          openStoryCard(storyCards[0]);
-        }
+        tabs.forEach(function (tab) {
+          tab.classList.remove('is-active');
+          tab.setAttribute('aria-selected', 'false');
+        });
+
+        storyCards.forEach(function (card) {
+          card.classList.remove('is-open');
+          var toggle = card.querySelector('[data-story-toggle]');
+          if (toggle) {
+            toggle.setAttribute('aria-expanded', 'false');
+          }
+        });
       }
 
       wizard.addEventListener('click', function (e) {
